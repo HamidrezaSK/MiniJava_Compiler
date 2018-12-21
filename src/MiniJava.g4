@@ -1,6 +1,6 @@
 grammar MiniJava;
 
-goal    : mainClass (classDeclaration)* EOF
+goal    : mainClass ( classDeclaration )* EOF
         ;
 
 mainClass   : 'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String' '[' ']' Identifier ')' '{' statement '}' '}'
@@ -53,7 +53,7 @@ Identifier  : [a-zA-Z_][a-zA-Z0-9_]*
 Integer : [0-9]+
         ;
 
-WS  : [\t\r\n ]+ -> skip
+WS  : [ \t\r\n]+ -> skip
     ;
 
 LineComment : '//' .*? '\n' -> skip
