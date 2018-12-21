@@ -3,7 +3,7 @@ grammar MiniJava;
 goal    : mainClass (classDeclaration)* EOF
         ;
 
-mainClass   : 'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String' '[' ']' Identitier ')' '{' statement '}' '}'
+mainClass   : 'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String' '[' ']' Identifier ')' '{' statement '}' '}'
             ;
 
 classDeclaration    : 'class' Identifier ('extends' Identifier)? '{' (varDeclaration)* (methodDeclaration)* '}'
@@ -12,18 +12,18 @@ classDeclaration    : 'class' Identifier ('extends' Identifier)? '{' (varDeclara
 varDeclaration  : mtype Identifier ';'
                 ;
 
-methodDeclaration   : 'public' mtype Identifier '(' (mtype Identifier ( ',' mtype Identifier )* )? ')' '{' ( varDeclaration )* ( statement )* 'return' expression ';' '}'
+methodDeclaration   : 'public' mtype Identifier '(' (mtype Identifier ( ',' mtype Identifier )* )? ')' '{' (varDeclaration)* (statement)* 'return' expression ';' '}'
                     ;
 
-mtype    : 'int' '[' ']'
+mtype   : 'int' '[' ']'
         | 'boolean'
         | 'int'
         | Identifier
         ;
 
-statement   : '{' (statement )* '}'
+statement   : '{' (statement)* '}'
             | 'if' '(' expression ')' statement 'else' statement
-            | 'while' '(' expression ')' expression ')' ';'
+            | 'while' '(' expression ')' statement
             | 'System.out.println' '(' expression ')' ';'
             | Identifier '=' expression ';'
             | Identifier '[' expression ']' '=' expression ';'
@@ -32,7 +32,7 @@ statement   : '{' (statement )* '}'
 expression  : expression ('&&' | '<' | '+' | '-' | '*') expression
             | expression '[' expression ']'
             | expression '.' 'length'
-            | expression '.' Identifier '(' ( expression ( ',' expression )* ) ? ')'
+            | expression '.' Identifier '(' (expression (',' expression)* )? ')'
             | Integer
             | Boolean
             | Identifier

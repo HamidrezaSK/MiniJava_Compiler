@@ -8,8 +8,8 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3*")
-        buf.write("\u00d6\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3)")
+        buf.write("\u00d4\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\3\2\3\2\7\2\25\n\2\f\2\16\2\30\13\2\3")
         buf.write("\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
         buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\5\4\62\n\4\3")
@@ -21,79 +21,78 @@ def serializedATN():
         buf.write("q\n\7\3\b\3\b\7\bu\n\b\f\b\16\bx\13\b\3\b\3\b\3\b\3\b")
         buf.write("\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3")
         buf.write("\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b")
-        buf.write("\3\b\3\b\3\b\3\b\3\b\5\b\u009e\n\b\3\t\3\t\3\t\3\t\3\t")
+        buf.write("\3\b\3\b\3\b\5\b\u009c\n\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
         buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
-        buf.write("\t\3\t\3\t\5\t\u00b5\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
-        buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u00c9\n")
-        buf.write("\t\f\t\16\t\u00cc\13\t\5\t\u00ce\n\t\3\t\7\t\u00d1\n\t")
-        buf.write("\f\t\16\t\u00d4\13\t\3\t\2\3\20\n\2\4\6\b\n\f\16\20\2")
-        buf.write("\3\3\2\32\36\2\u00eb\2\22\3\2\2\2\4\33\3\2\2\2\6-\3\2")
-        buf.write("\2\2\bB\3\2\2\2\nF\3\2\2\2\fp\3\2\2\2\16\u009d\3\2\2\2")
-        buf.write("\20\u00b4\3\2\2\2\22\26\5\4\3\2\23\25\5\6\4\2\24\23\3")
-        buf.write("\2\2\2\25\30\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\31")
-        buf.write("\3\2\2\2\30\26\3\2\2\2\31\32\7\2\2\3\32\3\3\2\2\2\33\34")
-        buf.write("\7\3\2\2\34\35\7%\2\2\35\36\7\4\2\2\36\37\7\5\2\2\37 ")
-        buf.write("\7\6\2\2 !\7\7\2\2!\"\7\b\2\2\"#\7\t\2\2#$\7\n\2\2$%\7")
-        buf.write("\13\2\2%&\7\f\2\2&\'\7*\2\2\'(\7\r\2\2()\7\4\2\2)*\5\16")
-        buf.write("\b\2*+\7\16\2\2+,\7\16\2\2,\5\3\2\2\2-.\7\3\2\2.\61\7")
-        buf.write("%\2\2/\60\7\17\2\2\60\62\7%\2\2\61/\3\2\2\2\61\62\3\2")
-        buf.write("\2\2\62\63\3\2\2\2\63\67\7\4\2\2\64\66\5\b\5\2\65\64\3")
-        buf.write("\2\2\2\669\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28=\3\2\2\2")
-        buf.write("9\67\3\2\2\2:<\5\n\6\2;:\3\2\2\2<?\3\2\2\2=;\3\2\2\2=")
-        buf.write(">\3\2\2\2>@\3\2\2\2?=\3\2\2\2@A\7\16\2\2A\7\3\2\2\2BC")
-        buf.write("\5\f\7\2CD\7%\2\2DE\7\20\2\2E\t\3\2\2\2FG\7\5\2\2GH\5")
-        buf.write("\f\7\2HI\7%\2\2IU\7\t\2\2JK\5\f\7\2KR\7%\2\2LM\7\21\2")
-        buf.write("\2MN\5\f\7\2NO\7%\2\2OQ\3\2\2\2PL\3\2\2\2QT\3\2\2\2RP")
-        buf.write("\3\2\2\2RS\3\2\2\2SV\3\2\2\2TR\3\2\2\2UJ\3\2\2\2UV\3\2")
-        buf.write("\2\2VW\3\2\2\2WX\7\r\2\2X\\\7\4\2\2Y[\5\b\5\2ZY\3\2\2")
-        buf.write("\2[^\3\2\2\2\\Z\3\2\2\2\\]\3\2\2\2]b\3\2\2\2^\\\3\2\2")
-        buf.write("\2_a\5\16\b\2`_\3\2\2\2ad\3\2\2\2b`\3\2\2\2bc\3\2\2\2")
-        buf.write("ce\3\2\2\2db\3\2\2\2ef\7\22\2\2fg\5\20\t\2gh\7\20\2\2")
-        buf.write("hi\7\16\2\2i\13\3\2\2\2jk\7\23\2\2kl\7\13\2\2lq\7\f\2")
-        buf.write("\2mq\7\24\2\2nq\7\23\2\2oq\7%\2\2pj\3\2\2\2pm\3\2\2\2")
-        buf.write("pn\3\2\2\2po\3\2\2\2q\r\3\2\2\2rv\7\4\2\2su\5\16\b\2t")
-        buf.write("s\3\2\2\2ux\3\2\2\2vt\3\2\2\2vw\3\2\2\2wy\3\2\2\2xv\3")
-        buf.write("\2\2\2y\u009e\7\16\2\2z{\7\25\2\2{|\7\t\2\2|}\5\20\t\2")
-        buf.write("}~\7\r\2\2~\177\5\16\b\2\177\u0080\7\26\2\2\u0080\u0081")
-        buf.write("\5\16\b\2\u0081\u009e\3\2\2\2\u0082\u0083\7\27\2\2\u0083")
-        buf.write("\u0084\7\t\2\2\u0084\u0085\5\20\t\2\u0085\u0086\7\r\2")
-        buf.write("\2\u0086\u0087\5\20\t\2\u0087\u0088\7\r\2\2\u0088\u0089")
-        buf.write("\7\20\2\2\u0089\u009e\3\2\2\2\u008a\u008b\7\30\2\2\u008b")
-        buf.write("\u008c\7\t\2\2\u008c\u008d\5\20\t\2\u008d\u008e\7\r\2")
-        buf.write("\2\u008e\u008f\7\20\2\2\u008f\u009e\3\2\2\2\u0090\u0091")
-        buf.write("\7%\2\2\u0091\u0092\7\31\2\2\u0092\u0093\5\20\t\2\u0093")
-        buf.write("\u0094\7\20\2\2\u0094\u009e\3\2\2\2\u0095\u0096\7%\2\2")
-        buf.write("\u0096\u0097\7\13\2\2\u0097\u0098\5\20\t\2\u0098\u0099")
-        buf.write("\7\f\2\2\u0099\u009a\7\31\2\2\u009a\u009b\5\20\t\2\u009b")
-        buf.write("\u009c\7\20\2\2\u009c\u009e\3\2\2\2\u009dr\3\2\2\2\u009d")
-        buf.write("z\3\2\2\2\u009d\u0082\3\2\2\2\u009d\u008a\3\2\2\2\u009d")
-        buf.write("\u0090\3\2\2\2\u009d\u0095\3\2\2\2\u009e\17\3\2\2\2\u009f")
-        buf.write("\u00a0\b\t\1\2\u00a0\u00b5\7&\2\2\u00a1\u00b5\7$\2\2\u00a2")
-        buf.write("\u00b5\7%\2\2\u00a3\u00b5\7!\2\2\u00a4\u00a5\7\"\2\2\u00a5")
-        buf.write("\u00a6\7\23\2\2\u00a6\u00a7\7\13\2\2\u00a7\u00a8\5\20")
-        buf.write("\t\2\u00a8\u00a9\7\f\2\2\u00a9\u00b5\3\2\2\2\u00aa\u00ab")
-        buf.write("\7\"\2\2\u00ab\u00ac\7%\2\2\u00ac\u00ad\7\t\2\2\u00ad")
-        buf.write("\u00b5\7\r\2\2\u00ae\u00af\7#\2\2\u00af\u00b5\5\20\t\4")
-        buf.write("\u00b0\u00b1\7\t\2\2\u00b1\u00b2\5\20\t\2\u00b2\u00b3")
-        buf.write("\7\r\2\2\u00b3\u00b5\3\2\2\2\u00b4\u009f\3\2\2\2\u00b4")
-        buf.write("\u00a1\3\2\2\2\u00b4\u00a2\3\2\2\2\u00b4\u00a3\3\2\2\2")
-        buf.write("\u00b4\u00a4\3\2\2\2\u00b4\u00aa\3\2\2\2\u00b4\u00ae\3")
-        buf.write("\2\2\2\u00b4\u00b0\3\2\2\2\u00b5\u00d2\3\2\2\2\u00b6\u00b7")
-        buf.write("\f\16\2\2\u00b7\u00b8\t\2\2\2\u00b8\u00d1\5\20\t\17\u00b9")
-        buf.write("\u00ba\f\r\2\2\u00ba\u00bb\7\13\2\2\u00bb\u00bc\5\20\t")
-        buf.write("\2\u00bc\u00bd\7\f\2\2\u00bd\u00d1\3\2\2\2\u00be\u00bf")
-        buf.write("\f\f\2\2\u00bf\u00c0\7\37\2\2\u00c0\u00d1\7 \2\2\u00c1")
-        buf.write("\u00c2\f\13\2\2\u00c2\u00c3\7\37\2\2\u00c3\u00c4\7%\2")
-        buf.write("\2\u00c4\u00cd\7\t\2\2\u00c5\u00ca\5\20\t\2\u00c6\u00c7")
-        buf.write("\7\21\2\2\u00c7\u00c9\5\20\t\2\u00c8\u00c6\3\2\2\2\u00c9")
-        buf.write("\u00cc\3\2\2\2\u00ca\u00c8\3\2\2\2\u00ca\u00cb\3\2\2\2")
-        buf.write("\u00cb\u00ce\3\2\2\2\u00cc\u00ca\3\2\2\2\u00cd\u00c5\3")
-        buf.write("\2\2\2\u00cd\u00ce\3\2\2\2\u00ce\u00cf\3\2\2\2\u00cf\u00d1")
-        buf.write("\7\r\2\2\u00d0\u00b6\3\2\2\2\u00d0\u00b9\3\2\2\2\u00d0")
-        buf.write("\u00be\3\2\2\2\u00d0\u00c1\3\2\2\2\u00d1\u00d4\3\2\2\2")
-        buf.write("\u00d2\u00d0\3\2\2\2\u00d2\u00d3\3\2\2\2\u00d3\21\3\2")
-        buf.write("\2\2\u00d4\u00d2\3\2\2\2\22\26\61\67=RU\\bpv\u009d\u00b4")
-        buf.write("\u00ca\u00cd\u00d0\u00d2")
+        buf.write("\t\5\t\u00b3\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
+        buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u00c7\n\t\f\t\16")
+        buf.write("\t\u00ca\13\t\5\t\u00cc\n\t\3\t\7\t\u00cf\n\t\f\t\16\t")
+        buf.write("\u00d2\13\t\3\t\2\3\20\n\2\4\6\b\n\f\16\20\2\3\3\2\32")
+        buf.write("\36\2\u00e9\2\22\3\2\2\2\4\33\3\2\2\2\6-\3\2\2\2\bB\3")
+        buf.write("\2\2\2\nF\3\2\2\2\fp\3\2\2\2\16\u009b\3\2\2\2\20\u00b2")
+        buf.write("\3\2\2\2\22\26\5\4\3\2\23\25\5\6\4\2\24\23\3\2\2\2\25")
+        buf.write("\30\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\31\3\2\2\2")
+        buf.write("\30\26\3\2\2\2\31\32\7\2\2\3\32\3\3\2\2\2\33\34\7\3\2")
+        buf.write("\2\34\35\7%\2\2\35\36\7\4\2\2\36\37\7\5\2\2\37 \7\6\2")
+        buf.write("\2 !\7\7\2\2!\"\7\b\2\2\"#\7\t\2\2#$\7\n\2\2$%\7\13\2")
+        buf.write("\2%&\7\f\2\2&\'\7%\2\2\'(\7\r\2\2()\7\4\2\2)*\5\16\b\2")
+        buf.write("*+\7\16\2\2+,\7\16\2\2,\5\3\2\2\2-.\7\3\2\2.\61\7%\2\2")
+        buf.write("/\60\7\17\2\2\60\62\7%\2\2\61/\3\2\2\2\61\62\3\2\2\2\62")
+        buf.write("\63\3\2\2\2\63\67\7\4\2\2\64\66\5\b\5\2\65\64\3\2\2\2")
+        buf.write("\669\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28=\3\2\2\29\67\3")
+        buf.write("\2\2\2:<\5\n\6\2;:\3\2\2\2<?\3\2\2\2=;\3\2\2\2=>\3\2\2")
+        buf.write("\2>@\3\2\2\2?=\3\2\2\2@A\7\16\2\2A\7\3\2\2\2BC\5\f\7\2")
+        buf.write("CD\7%\2\2DE\7\20\2\2E\t\3\2\2\2FG\7\5\2\2GH\5\f\7\2HI")
+        buf.write("\7%\2\2IU\7\t\2\2JK\5\f\7\2KR\7%\2\2LM\7\21\2\2MN\5\f")
+        buf.write("\7\2NO\7%\2\2OQ\3\2\2\2PL\3\2\2\2QT\3\2\2\2RP\3\2\2\2")
+        buf.write("RS\3\2\2\2SV\3\2\2\2TR\3\2\2\2UJ\3\2\2\2UV\3\2\2\2VW\3")
+        buf.write("\2\2\2WX\7\r\2\2X\\\7\4\2\2Y[\5\b\5\2ZY\3\2\2\2[^\3\2")
+        buf.write("\2\2\\Z\3\2\2\2\\]\3\2\2\2]b\3\2\2\2^\\\3\2\2\2_a\5\16")
+        buf.write("\b\2`_\3\2\2\2ad\3\2\2\2b`\3\2\2\2bc\3\2\2\2ce\3\2\2\2")
+        buf.write("db\3\2\2\2ef\7\22\2\2fg\5\20\t\2gh\7\20\2\2hi\7\16\2\2")
+        buf.write("i\13\3\2\2\2jk\7\23\2\2kl\7\13\2\2lq\7\f\2\2mq\7\24\2")
+        buf.write("\2nq\7\23\2\2oq\7%\2\2pj\3\2\2\2pm\3\2\2\2pn\3\2\2\2p")
+        buf.write("o\3\2\2\2q\r\3\2\2\2rv\7\4\2\2su\5\16\b\2ts\3\2\2\2ux")
+        buf.write("\3\2\2\2vt\3\2\2\2vw\3\2\2\2wy\3\2\2\2xv\3\2\2\2y\u009c")
+        buf.write("\7\16\2\2z{\7\25\2\2{|\7\t\2\2|}\5\20\t\2}~\7\r\2\2~\177")
+        buf.write("\5\16\b\2\177\u0080\7\26\2\2\u0080\u0081\5\16\b\2\u0081")
+        buf.write("\u009c\3\2\2\2\u0082\u0083\7\27\2\2\u0083\u0084\7\t\2")
+        buf.write("\2\u0084\u0085\5\20\t\2\u0085\u0086\7\r\2\2\u0086\u0087")
+        buf.write("\5\16\b\2\u0087\u009c\3\2\2\2\u0088\u0089\7\30\2\2\u0089")
+        buf.write("\u008a\7\t\2\2\u008a\u008b\5\20\t\2\u008b\u008c\7\r\2")
+        buf.write("\2\u008c\u008d\7\20\2\2\u008d\u009c\3\2\2\2\u008e\u008f")
+        buf.write("\7%\2\2\u008f\u0090\7\31\2\2\u0090\u0091\5\20\t\2\u0091")
+        buf.write("\u0092\7\20\2\2\u0092\u009c\3\2\2\2\u0093\u0094\7%\2\2")
+        buf.write("\u0094\u0095\7\13\2\2\u0095\u0096\5\20\t\2\u0096\u0097")
+        buf.write("\7\f\2\2\u0097\u0098\7\31\2\2\u0098\u0099\5\20\t\2\u0099")
+        buf.write("\u009a\7\20\2\2\u009a\u009c\3\2\2\2\u009br\3\2\2\2\u009b")
+        buf.write("z\3\2\2\2\u009b\u0082\3\2\2\2\u009b\u0088\3\2\2\2\u009b")
+        buf.write("\u008e\3\2\2\2\u009b\u0093\3\2\2\2\u009c\17\3\2\2\2\u009d")
+        buf.write("\u009e\b\t\1\2\u009e\u00b3\7&\2\2\u009f\u00b3\7$\2\2\u00a0")
+        buf.write("\u00b3\7%\2\2\u00a1\u00b3\7!\2\2\u00a2\u00a3\7\"\2\2\u00a3")
+        buf.write("\u00a4\7\23\2\2\u00a4\u00a5\7\13\2\2\u00a5\u00a6\5\20")
+        buf.write("\t\2\u00a6\u00a7\7\f\2\2\u00a7\u00b3\3\2\2\2\u00a8\u00a9")
+        buf.write("\7\"\2\2\u00a9\u00aa\7%\2\2\u00aa\u00ab\7\t\2\2\u00ab")
+        buf.write("\u00b3\7\r\2\2\u00ac\u00ad\7#\2\2\u00ad\u00b3\5\20\t\4")
+        buf.write("\u00ae\u00af\7\t\2\2\u00af\u00b0\5\20\t\2\u00b0\u00b1")
+        buf.write("\7\r\2\2\u00b1\u00b3\3\2\2\2\u00b2\u009d\3\2\2\2\u00b2")
+        buf.write("\u009f\3\2\2\2\u00b2\u00a0\3\2\2\2\u00b2\u00a1\3\2\2\2")
+        buf.write("\u00b2\u00a2\3\2\2\2\u00b2\u00a8\3\2\2\2\u00b2\u00ac\3")
+        buf.write("\2\2\2\u00b2\u00ae\3\2\2\2\u00b3\u00d0\3\2\2\2\u00b4\u00b5")
+        buf.write("\f\16\2\2\u00b5\u00b6\t\2\2\2\u00b6\u00cf\5\20\t\17\u00b7")
+        buf.write("\u00b8\f\r\2\2\u00b8\u00b9\7\13\2\2\u00b9\u00ba\5\20\t")
+        buf.write("\2\u00ba\u00bb\7\f\2\2\u00bb\u00cf\3\2\2\2\u00bc\u00bd")
+        buf.write("\f\f\2\2\u00bd\u00be\7\37\2\2\u00be\u00cf\7 \2\2\u00bf")
+        buf.write("\u00c0\f\13\2\2\u00c0\u00c1\7\37\2\2\u00c1\u00c2\7%\2")
+        buf.write("\2\u00c2\u00cb\7\t\2\2\u00c3\u00c8\5\20\t\2\u00c4\u00c5")
+        buf.write("\7\21\2\2\u00c5\u00c7\5\20\t\2\u00c6\u00c4\3\2\2\2\u00c7")
+        buf.write("\u00ca\3\2\2\2\u00c8\u00c6\3\2\2\2\u00c8\u00c9\3\2\2\2")
+        buf.write("\u00c9\u00cc\3\2\2\2\u00ca\u00c8\3\2\2\2\u00cb\u00c3\3")
+        buf.write("\2\2\2\u00cb\u00cc\3\2\2\2\u00cc\u00cd\3\2\2\2\u00cd\u00cf")
+        buf.write("\7\r\2\2\u00ce\u00b4\3\2\2\2\u00ce\u00b7\3\2\2\2\u00ce")
+        buf.write("\u00bc\3\2\2\2\u00ce\u00bf\3\2\2\2\u00cf\u00d2\3\2\2\2")
+        buf.write("\u00d0\u00ce\3\2\2\2\u00d0\u00d1\3\2\2\2\u00d1\21\3\2")
+        buf.write("\2\2\u00d2\u00d0\3\2\2\2\22\26\61\67=RU\\bpv\u009b\u00b2")
+        buf.write("\u00c8\u00cb\u00ce\u00d0")
         return buf.getvalue()
 
 
@@ -124,7 +123,7 @@ class MiniJavaParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "Boolean", "Identifier", 
-                      "Integer", "WS", "LineComment", "Comment", "Identitier" ]
+                      "Integer", "WS", "LineComment", "Comment" ]
 
     RULE_goal = 0
     RULE_mainClass = 1
@@ -178,7 +177,6 @@ class MiniJavaParser ( Parser ):
     WS=37
     LineComment=38
     Comment=39
-    Identitier=40
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -265,11 +263,11 @@ class MiniJavaParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def Identifier(self):
-            return self.getToken(MiniJavaParser.Identifier, 0)
-
-        def Identitier(self):
-            return self.getToken(MiniJavaParser.Identitier, 0)
+        def Identifier(self, i:int=None):
+            if i is None:
+                return self.getTokens(MiniJavaParser.Identifier)
+            else:
+                return self.getToken(MiniJavaParser.Identifier, i)
 
         def statement(self):
             return self.getTypedRuleContext(MiniJavaParser.StatementContext,0)
@@ -324,7 +322,7 @@ class MiniJavaParser ( Parser ):
             self.state = 35
             self.match(MiniJavaParser.T__9)
             self.state = 36
-            self.match(MiniJavaParser.Identitier)
+            self.match(MiniJavaParser.Identifier)
             self.state = 37
             self.match(MiniJavaParser.T__10)
             self.state = 38
@@ -760,7 +758,7 @@ class MiniJavaParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_statement)
         self._la = 0 # Token type
         try:
-            self.state = 155
+            self.state = 153
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
@@ -810,54 +808,50 @@ class MiniJavaParser ( Parser ):
                 self.state = 131
                 self.match(MiniJavaParser.T__10)
                 self.state = 132
-                self.expression(0)
-                self.state = 133
-                self.match(MiniJavaParser.T__10)
-                self.state = 134
-                self.match(MiniJavaParser.T__13)
+                self.statement()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 136
+                self.state = 134
                 self.match(MiniJavaParser.T__21)
-                self.state = 137
+                self.state = 135
                 self.match(MiniJavaParser.T__6)
-                self.state = 138
+                self.state = 136
                 self.expression(0)
-                self.state = 139
+                self.state = 137
                 self.match(MiniJavaParser.T__10)
-                self.state = 140
+                self.state = 138
                 self.match(MiniJavaParser.T__13)
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 142
+                self.state = 140
                 self.match(MiniJavaParser.Identifier)
-                self.state = 143
+                self.state = 141
                 self.match(MiniJavaParser.T__22)
-                self.state = 144
+                self.state = 142
                 self.expression(0)
-                self.state = 145
+                self.state = 143
                 self.match(MiniJavaParser.T__13)
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 147
+                self.state = 145
                 self.match(MiniJavaParser.Identifier)
-                self.state = 148
+                self.state = 146
                 self.match(MiniJavaParser.T__8)
-                self.state = 149
+                self.state = 147
                 self.expression(0)
-                self.state = 150
+                self.state = 148
                 self.match(MiniJavaParser.T__9)
-                self.state = 151
+                self.state = 149
                 self.match(MiniJavaParser.T__22)
-                self.state = 152
+                self.state = 150
                 self.expression(0)
-                self.state = 153
+                self.state = 151
                 self.match(MiniJavaParser.T__13)
                 pass
 
@@ -922,72 +916,72 @@ class MiniJavaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 178
+            self.state = 176
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
-                self.state = 158
+                self.state = 156
                 self.match(MiniJavaParser.Integer)
                 pass
 
             elif la_ == 2:
-                self.state = 159
+                self.state = 157
                 self.match(MiniJavaParser.Boolean)
                 pass
 
             elif la_ == 3:
-                self.state = 160
+                self.state = 158
                 self.match(MiniJavaParser.Identifier)
                 pass
 
             elif la_ == 4:
-                self.state = 161
+                self.state = 159
                 self.match(MiniJavaParser.T__30)
                 pass
 
             elif la_ == 5:
-                self.state = 162
+                self.state = 160
                 self.match(MiniJavaParser.T__31)
-                self.state = 163
+                self.state = 161
                 self.match(MiniJavaParser.T__16)
-                self.state = 164
+                self.state = 162
                 self.match(MiniJavaParser.T__8)
-                self.state = 165
+                self.state = 163
                 self.expression(0)
-                self.state = 166
+                self.state = 164
                 self.match(MiniJavaParser.T__9)
                 pass
 
             elif la_ == 6:
-                self.state = 168
+                self.state = 166
                 self.match(MiniJavaParser.T__31)
-                self.state = 169
+                self.state = 167
                 self.match(MiniJavaParser.Identifier)
-                self.state = 170
+                self.state = 168
                 self.match(MiniJavaParser.T__6)
-                self.state = 171
+                self.state = 169
                 self.match(MiniJavaParser.T__10)
                 pass
 
             elif la_ == 7:
-                self.state = 172
+                self.state = 170
                 self.match(MiniJavaParser.T__32)
-                self.state = 173
+                self.state = 171
                 self.expression(2)
                 pass
 
             elif la_ == 8:
-                self.state = 174
+                self.state = 172
                 self.match(MiniJavaParser.T__6)
-                self.state = 175
+                self.state = 173
                 self.expression(0)
-                self.state = 176
+                self.state = 174
                 self.match(MiniJavaParser.T__10)
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 208
+            self.state = 206
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -995,94 +989,94 @@ class MiniJavaParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 206
+                    self.state = 204
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
                     if la_ == 1:
                         localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 180
+                        self.state = 178
                         if not self.precpred(self._ctx, 12):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
-                        self.state = 181
+                        self.state = 179
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27))) != 0)):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 182
+                        self.state = 180
                         self.expression(13)
                         pass
 
                     elif la_ == 2:
                         localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 183
+                        self.state = 181
                         if not self.precpred(self._ctx, 11):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
-                        self.state = 184
+                        self.state = 182
                         self.match(MiniJavaParser.T__8)
-                        self.state = 185
+                        self.state = 183
                         self.expression(0)
-                        self.state = 186
+                        self.state = 184
                         self.match(MiniJavaParser.T__9)
                         pass
 
                     elif la_ == 3:
                         localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 188
+                        self.state = 186
                         if not self.precpred(self._ctx, 10):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
-                        self.state = 189
+                        self.state = 187
                         self.match(MiniJavaParser.T__28)
-                        self.state = 190
+                        self.state = 188
                         self.match(MiniJavaParser.T__29)
                         pass
 
                     elif la_ == 4:
                         localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 191
+                        self.state = 189
                         if not self.precpred(self._ctx, 9):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
-                        self.state = 192
+                        self.state = 190
                         self.match(MiniJavaParser.T__28)
-                        self.state = 193
+                        self.state = 191
                         self.match(MiniJavaParser.Identifier)
-                        self.state = 194
+                        self.state = 192
                         self.match(MiniJavaParser.T__6)
-                        self.state = 203
+                        self.state = 201
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
                         if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__6) | (1 << MiniJavaParser.T__30) | (1 << MiniJavaParser.T__31) | (1 << MiniJavaParser.T__32) | (1 << MiniJavaParser.Boolean) | (1 << MiniJavaParser.Identifier) | (1 << MiniJavaParser.Integer))) != 0):
-                            self.state = 195
+                            self.state = 193
                             self.expression(0)
-                            self.state = 200
+                            self.state = 198
                             self._errHandler.sync(self)
                             _la = self._input.LA(1)
                             while _la==MiniJavaParser.T__14:
-                                self.state = 196
+                                self.state = 194
                                 self.match(MiniJavaParser.T__14)
-                                self.state = 197
+                                self.state = 195
                                 self.expression(0)
-                                self.state = 202
+                                self.state = 200
                                 self._errHandler.sync(self)
                                 _la = self._input.LA(1)
 
 
 
-                        self.state = 205
+                        self.state = 203
                         self.match(MiniJavaParser.T__10)
                         pass
 
              
-                self.state = 210
+                self.state = 208
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
 

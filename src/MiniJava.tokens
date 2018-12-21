@@ -37,7 +37,6 @@ Integer=36
 WS=37
 LineComment=38
 Comment=39
-Identitier=40
 'class'=1
 '{'=2
 'public'=3
