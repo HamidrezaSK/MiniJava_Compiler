@@ -18,19 +18,18 @@ else:
 test_file = './testfiles/Factorial.java'
 # test_file = './testfiles/BubbleSort.java'
 
+class KeyPrinter(MiniJavaListener):
+	def exitKey(self, ctx):
+		print('oh ho.')
 
 def run():
-	input_stream = InputStream(test_file)
-	lexer = MiniJavaLexer(input_stream)
-	token_stream = CommonTokenStream(lexer)
-	token_stream.fill()
-	parser = MiniJavaParser(token_stream)
-
-	# parser.removeErrorListeners()
-	# start_rule = getattr(parser, 'mainClass')
-	# res = start_rule()
-	# tree = parser.goal()
-
+	data = open(test_file, 'r').read()
+	input = InputStream(data)
+	lexer = MiniJavaLexer(input)
+	stream = CommonTokenStream(lexer)
+	parser = MiniJavaParser(stream)
+	tree = parser.goal()
+	print(tree.toStringTree())
 
 if __name__ == '__main__':
 	run()
