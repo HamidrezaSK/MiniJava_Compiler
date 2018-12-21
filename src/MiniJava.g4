@@ -1,4 +1,4 @@
-grammar minijava;
+grammar MiniJava;
 
 goal    : mainClass (classDeclaration)* EOF
         ;
@@ -9,13 +9,13 @@ mainClass   : 'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String
 classDeclaration    : 'class' Identifier ('extends' Identifier)? '{' (varDeclaration)* (methodDeclaration)* '}'
                     ;
 
-varDeclaration  : type Identifier ';'
+varDeclaration  : mtype Identifier ';'
                 ;
 
-methodDeclaration   : 'public' type Identifier '(' (type Identifier ( ',' type Identifier )* )? ')' '{' ( varDeclaration )* ( statement )* 'return' expression ';' '}'
+methodDeclaration   : 'public' mtype Identifier '(' (mtype Identifier ( ',' mtype Identifier )* )? ')' '{' ( varDeclaration )* ( statement )* 'return' expression ';' '}'
                     ;
 
-type    : 'int' '[' ']'
+mtype    : 'int' '[' ']'
         | 'boolean'
         | 'int'
         | Identifier
