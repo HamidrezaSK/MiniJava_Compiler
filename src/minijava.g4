@@ -33,7 +33,7 @@ expression  : expression ('&&' | '<' | '+' | '-' | '*') expression
             | expression '[' expression ']'
             | expression '.' 'length'
             | expression '.' Identifier '(' ( expression ( ',' expression )* ) ? ')'
-            | Interger
+            | Integer
             | Boolean
             | Identifier
             | 'this'
@@ -50,9 +50,14 @@ Boolean : 'true'
 Identifier  : [a-zA-Z_][a-zA-Z0-9_]*
             ;
 
-Interger    : [0-9]+
-            ;
+Integer : [0-9]+
+        ;
 
 WS  : [\t\r\n ]+ -> skip
     ;
 
+LineComment : '//' .*? '\n' -> skip
+            ;
+
+Comment : '/*' .*? '*/' -> skip
+        ;
