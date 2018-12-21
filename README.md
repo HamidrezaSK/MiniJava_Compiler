@@ -12,3 +12,8 @@ The project for COMP130014 @ Fudan University
 ```bash
 pip install -r requirements.txt
 ```
+
+#### Recommended plugin
+
+> PyCharm: ANTLR-V4 grammar plugin
+
