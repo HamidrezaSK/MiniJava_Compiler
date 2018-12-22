@@ -35,7 +35,7 @@ class identifier_region(object):
 
 class identifier_region_stack(object):
     '''
-    Using a stack to store the valid region of a identifier
+    Using a stack to store the valid regions of a identifier
     '''
     def __init__(self):
         self._identifiers = {}   # current identifiers and their values
@@ -103,4 +103,124 @@ class My_Vistor(MiniJavaVisitor):
         return self.regions.check(identifier)
     
     def visitGoal(self, ctx):
-        identifier = self.regions
+        # enter a new start, allocate a NEW region
+        self.regions.add_new()  # allocate a NEW region, discard the return
+        res = self.visitChildren(ctx)
+        self.regions.pop_last() # retrieve the allocated region
+        return res
+
+    def visitMainclass(self, ctx):
+        '''
+        A new MAIN class. Check whether it has been defined and
+        put it in the current region
+        Start a new region
+        '''
+        current_region = self.regions.get_top()
+
+        class_name = ctx.Identifier(0).getText()
+        if not self.check(class_name):
+            # this mainclass has never been defined in any region
+            # correct, ut it in the current region
+            current_region.push(class_name, 'main_class')
+        else:
+            self.err_id_multidef("Multiple Mainclass Declare: " + classname , ctx.Identifier(0).getSymbol())
+        
+        # start a new region
+        self.regions.add_new()  # allocate a NEW region, discard the return
+        res = self.visitChildren(ctx)
+        self.regions.pop_last() # retrieve the allocated region
+        return res
+    
+    def visitDec_class(self, ctx):
+        '''
+        A new class. Check whether it has been defined and
+        put it in the current region
+        Start a new region
+        '''
+        current_region = self.regions.get_top()
+
+        class_name = ctx.Identifier(0).getText()
+        if not self.check(class_name):  # not declared
+            current_region.push(class_name, 'declared class')
+        else:
+            self.err_id_multidef("Multiple Class Declare: " + classname , ctx.Identifier(0).getSymbol())
+        
+        # start a new region
+        self.regions.add_new()  # allocate a new region, discard the return
+        res = self.visitChildren(ctx)
+        self.regions.pop_last() # retrieve the allocated region
+        return res
+    
+    def visitDec_var(self, ctx):
+        '''
+        check whether the new declared variable
+        has been multiple declared
+        No new region
+        '''
+        current_region = self.regions.get_top()
+        var_name = ctx.Identifier().getText()
+        var_type = ctx.mtype().getText()
+
+        if not self.check(var_name):
+            # put it in the current region
+            current_region.push(var_name, var_type)
+        else:
+            self.err_id_multidef("Multiple Variance Declare: " + var_name, ctx.Identifier().getSymbol())
+    
+    def visitDec_method(self, ctx):
+        '''
+        Check whether the method name has been defined
+        Start a new region
+        '''
+        current_region = self.regions.get_top()
+        method_name = ctx.Identifier(0).getText()
+        method_type = ctx.mtype(0).getText()
+        if not self.check(method_name):
+            current_region.push(method_name, method_type)
+        else:
+            self.err_id_multidef("Multiple Method Declare: " + method_name, ctx.Identifier(0).getSymbol())
+        
+        new_region = self.regions.add_new() # new region for the method
+        # can't get the accurate number of parameters, check the former 6 parameters
+        try:
+            for i in range(1, 6):
+                # mtype(0) is the method name
+                para = ctx.Identifier(i)
+                para_name = ctx.Identifier(i).getText()
+                para_type = ctx.mtype(i).getText()
+
+                # check whether having two same parameters
+                # it's ok if another region has parameter with the same name
+                if not new_region.check(para_name):
+                    new_region.push(para_name, para_type)
+                else:
+                    self.err_id_multidef("Multiple Parameter Declare: " + para_name, para.getSymbol())
+        except:
+            pass    # for the concern of parameter overflow
+        
+        res = self.visitChildren(ctx)
+        self.regions.pop_last() # retrieve the allocated region
+        return res
+
+        def visitExpr_id(self, ctx):
+            ID = ctx.Identifier().getText()
+            token = ctx.Identifier().getSymbol()
+            if not self.check(ID):
+                # the identifier has not been defined
+                self.err_id_undetected("Undefined Identifer: "+ ID, ctx.Identifier().getSymbol())
+        
+    def visitState_lrparents(self, ctx):
+        # start a new region
+        self.regions.add_new()  # allocate a NEW region, discard the return
+        res = self.visitChildren(ctx)
+        self.regions.pop_last() # retrieve the allocated region
+        return res
+    
+    def visitState_def(self, ctx):
+        # no new region
+        current_region = self.regions.get_top()
+        id_name = ctx.Identifier().getText()
+        if not self.check(id_name):
+            self.err_id_multidef("Undefined Identifer: " + id_name, ctx.Identifier().getSymbol())
+        res = self.visitChildren(ctx)
+        return res

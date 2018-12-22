@@ -53,6 +53,24 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MiniJavaParser#parameters.
+    def enterParameters(self, ctx:MiniJavaParser.ParametersContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#parameters.
+    def exitParameters(self, ctx:MiniJavaParser.ParametersContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#parameterDeclaration.
+    def enterParameterDeclaration(self, ctx:MiniJavaParser.ParameterDeclarationContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#parameterDeclaration.
+    def exitParameterDeclaration(self, ctx:MiniJavaParser.ParameterDeclarationContext):
+        pass
+
+
     # Enter a parse tree produced by MiniJavaParser#mtype.
     def enterMtype(self, ctx:MiniJavaParser.MtypeContext):
         pass

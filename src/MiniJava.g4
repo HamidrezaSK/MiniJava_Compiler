@@ -15,9 +15,15 @@ varDeclaration  : mtype Identifier ';'
                 #dec_var
                 ;
 
-methodDeclaration   : 'public' mtype Identifier '(' (mtype Identifier ( ',' mtype Identifier )* )? ')' '{' (varDeclaration)* (statement)* 'return' expression ';' '}'
+methodDeclaration   : 'public' mtype Identifier '(' parameters ')' '{' (varDeclaration)* (statement)* 'return' expression ';' '}'
                     #dec_method
                     ;
+
+parameters  : (parameterDeclaration (',' parameterDeclaration)*)?
+            ;
+
+parameterDeclaration    : mtype Identifier
+                        ;
 
 mtype   : 'int' '[' ']'
         | 'boolean'
