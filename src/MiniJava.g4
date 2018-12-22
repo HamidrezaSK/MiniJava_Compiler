@@ -15,15 +15,19 @@ varDeclaration  : mtype Identifier ';'
                 #dec_var
                 ;
 
-methodDeclaration   : 'public' mtype Identifier '(' parameters ')' '{' (varDeclaration)* (statement)* 'return' expression ';' '}'
-                    #dec_method
-                    ;
+methodDeclaration	:	'public' mtype Identifier '(' ( mtype Identifier ( ',' mtype Identifier )* )? ')' '{' ( varDeclaration )* ( statement )* 'return' expression ';' '}'
+					#dec_method
+					;
 
-parameters  : (parameterDeclaration (',' parameterDeclaration)*)?
-            ;
+//methodDeclaration   : 'public' mtype Identifier '(' parameters ')' '{' (varDeclaration)* (statement)* 'return' expression ';' '}'
+//                    #dec_method
+//                    ;
 
-parameterDeclaration    : mtype Identifier
-                        ;
+//parameters  : (parameterDeclaration (',' parameterDeclaration)*)?
+//            ;
+
+//parameterDeclaration    : mtype Identifier
+//                        ;
 
 mtype   : 'int' '[' ']'
         | 'boolean'
@@ -42,7 +46,7 @@ statement   : '{' (statement)* '}'
             | Identifier '=' expression ';'
                 #state_def
             | Identifier '[' expression ']' '=' expression ';'
-                #state_array_def
+                #state_array_assign
             ;
 
 expression  : expression ('&&' | '<' | '+' | '-' | '*') expression

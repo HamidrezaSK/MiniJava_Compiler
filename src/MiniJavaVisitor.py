@@ -34,16 +34,6 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#parameters.
-    def visitParameters(self, ctx:MiniJavaParser.ParametersContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#parameterDeclaration.
-    def visitParameterDeclaration(self, ctx:MiniJavaParser.ParameterDeclarationContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by MiniJavaParser#mtype.
     def visitMtype(self, ctx:MiniJavaParser.MtypeContext):
         return self.visitChildren(ctx)
@@ -74,8 +64,8 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#state_array_def.
-    def visitState_array_def(self, ctx:MiniJavaParser.State_array_defContext):
+    # Visit a parse tree produced by MiniJavaParser#state_array_assign.
+    def visitState_array_assign(self, ctx:MiniJavaParser.State_array_assignContext):
         return self.visitChildren(ctx)
 
 

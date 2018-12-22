@@ -166,6 +166,7 @@ class My_Vistor(MiniJavaVisitor):
             current_region.push(var_name, var_type)
         else:
             self.err_id_multidef("Multiple Variance Declare: " + var_name, ctx.Identifier().getSymbol())
+        return self.visitChildren(ctx)
     
     def visitDec_method(self, ctx):
         '''
@@ -202,12 +203,13 @@ class My_Vistor(MiniJavaVisitor):
         self.regions.pop_last() # retrieve the allocated region
         return res
 
-        def visitExpr_id(self, ctx):
-            ID = ctx.Identifier().getText()
-            token = ctx.Identifier().getSymbol()
-            if not self.check(ID):
-                # the identifier has not been defined
-                self.err_id_undetected("Undefined Identifer: "+ ID, ctx.Identifier().getSymbol())
+    def visitExpr_id(self, ctx):
+        id_name = ctx.Identifier().getText()
+        token = ctx.Identifier().getSymbol()
+        if not self.check(id_name):
+            # the identifier has not been defined
+            self.err_id_undetected("Undefined Identifer: "+ id_name, ctx.Identifier().getSymbol())
+        return self.visitChildren(ctx)  # ? return self.check(id_name)
         
     def visitState_lrparents(self, ctx):
         # start a new region
@@ -221,6 +223,40 @@ class My_Vistor(MiniJavaVisitor):
         current_region = self.regions.get_top()
         id_name = ctx.Identifier().getText()
         if not self.check(id_name):
-            self.err_id_multidef("Undefined Identifer: " + id_name, ctx.Identifier().getSymbol())
+            self.err_id_undetected("Undefined Identifer: " + id_name, ctx.Identifier().getSymbol())
+        res = self.visitChildren(ctx)
+        return res
+    
+    def visitState_array_assign(self, ctx):
+        # no new region
+        current_region = self.regions.get_top()
+        id_name = ctx.Identifier().getText()
+        if not self.check(id_name):
+            self.err_id_undetected("Undefined Identifer: " + id_name, ctx.Identifier().getSymbol())
+        res = self.visitChildren(ctx)
+        return res
+    
+    def visitExpr_new_array(self, ctx):
+        # no new region
+        # can't habe been declared
+        current_region = self.regions.get_top()
+        array_name = ctx.Identifier().getText()
+        array_type = ctx.mtype().getText()
+        if not self.check(array_name):
+            current_region.push(array_name, array_type)
+        else:
+            self.err_id_multidef("Multiple Array Declare: " + array_name, ctx.Identifier().getSymbol())
+        res = self.visitChildren(ctx)
+        return res
+    
+    def visitExpr_method_calling(self, ctx):
+        # no new region
+        # must have been declared
+        current_region = self.regions.get_top()
+        method_name = ctx.Identifier(0).getText()
+        method_type = ctx.mtype(0).getText()
+
+        if not self.check(method_name):
+            self.err_id_undetected("Undefined Method: " + method_name, ctx.Identifier(0).getSymbol())
         res = self.visitChildren(ctx)
         return res

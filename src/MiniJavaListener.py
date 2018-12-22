@@ -53,24 +53,6 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#parameters.
-    def enterParameters(self, ctx:MiniJavaParser.ParametersContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#parameters.
-    def exitParameters(self, ctx:MiniJavaParser.ParametersContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#parameterDeclaration.
-    def enterParameterDeclaration(self, ctx:MiniJavaParser.ParameterDeclarationContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#parameterDeclaration.
-    def exitParameterDeclaration(self, ctx:MiniJavaParser.ParameterDeclarationContext):
-        pass
-
-
     # Enter a parse tree produced by MiniJavaParser#mtype.
     def enterMtype(self, ctx:MiniJavaParser.MtypeContext):
         pass
@@ -125,12 +107,12 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#state_array_def.
-    def enterState_array_def(self, ctx:MiniJavaParser.State_array_defContext):
+    # Enter a parse tree produced by MiniJavaParser#state_array_assign.
+    def enterState_array_assign(self, ctx:MiniJavaParser.State_array_assignContext):
         pass
 
-    # Exit a parse tree produced by MiniJavaParser#state_array_def.
-    def exitState_array_def(self, ctx:MiniJavaParser.State_array_defContext):
+    # Exit a parse tree produced by MiniJavaParser#state_array_assign.
+    def exitState_array_assign(self, ctx:MiniJavaParser.State_array_assignContext):
         pass
 
 
