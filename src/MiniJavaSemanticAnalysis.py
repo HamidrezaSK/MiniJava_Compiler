@@ -1,8 +1,11 @@
+# Made by Wang Ao, 15300240004. All rights reserved.
+
 from antlr4 import *
 from MiniJavaVisitor import *
 from MiniJavaListener import *
 
 # We overwrite the class Visitor to check the semantic freely
+# ctx: context
 
 class identifier_region(object):
     '''
@@ -75,7 +78,29 @@ class identifier_region_stack(object):
 
 # the implementation of the real visitor class
 class My_Vistor(MiniJavaVisitor):
+    '''
+    visitChildren is the core
+    what we do is to check the identifiers when traversing the tree
+    '''
     def __init__(self):
         self.regions = identifier_region_stack()
     
-    def 
+    def print_error(self, s, token):
+        line = token.line   # number of the wrong line
+        column = token.column   # number of wrong column
+        msg = s
+        print ('line ' + str(line) + ':' + str(column) + '\t' + 'Semantic Fault: ' + msg)
+
+    def err_id_undetected(self, s, ctx):
+        # identifier not defined
+        self.print_error(s, ctx)
+    
+    def err_id_multidef(self, s, ctx):
+        # identifier multi defined
+        self.print_error(s, ctx)
+    
+    def check(self, identifier):
+        return self.regions.check(identifier)
+    
+    def visitGoal(self, ctx):
+        identifier = self.regions

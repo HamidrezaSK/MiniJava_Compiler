@@ -258,33 +258,44 @@ class MiniJavaParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+
+        def getRuleIndex(self):
+            return MiniJavaParser.RULE_mainClass
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class MainclassContext(MainClassContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.MainClassContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
         def Identifier(self, i:int=None):
             if i is None:
                 return self.getTokens(MiniJavaParser.Identifier)
             else:
                 return self.getToken(MiniJavaParser.Identifier, i)
-
         def statement(self):
             return self.getTypedRuleContext(MiniJavaParser.StatementContext,0)
 
 
-        def getRuleIndex(self):
-            return MiniJavaParser.RULE_mainClass
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMainClass" ):
-                listener.enterMainClass(self)
+            if hasattr( listener, "enterMainclass" ):
+                listener.enterMainclass(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMainClass" ):
-                listener.exitMainClass(self)
+            if hasattr( listener, "exitMainclass" ):
+                listener.exitMainclass(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMainClass" ):
-                return visitor.visitMainClass(self)
+            if hasattr( visitor, "visitMainclass" ):
+                return visitor.visitMainclass(self)
             else:
                 return visitor.visitChildren(self)
-
 
 
 
@@ -293,6 +304,7 @@ class MiniJavaParser ( Parser ):
         localctx = MiniJavaParser.MainClassContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_mainClass)
         try:
+            localctx = MiniJavaParser.MainclassContext(self, localctx)
             self.enterOuterAlt(localctx, 1)
             self.state = 25
             self.match(MiniJavaParser.T__0)
@@ -342,18 +354,32 @@ class MiniJavaParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+
+        def getRuleIndex(self):
+            return MiniJavaParser.RULE_classDeclaration
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class Dec_classContext(ClassDeclarationContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ClassDeclarationContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
         def Identifier(self, i:int=None):
             if i is None:
                 return self.getTokens(MiniJavaParser.Identifier)
             else:
                 return self.getToken(MiniJavaParser.Identifier, i)
-
         def varDeclaration(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(MiniJavaParser.VarDeclarationContext)
             else:
                 return self.getTypedRuleContext(MiniJavaParser.VarDeclarationContext,i)
-
 
         def methodDeclaration(self, i:int=None):
             if i is None:
@@ -362,23 +388,19 @@ class MiniJavaParser ( Parser ):
                 return self.getTypedRuleContext(MiniJavaParser.MethodDeclarationContext,i)
 
 
-        def getRuleIndex(self):
-            return MiniJavaParser.RULE_classDeclaration
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClassDeclaration" ):
-                listener.enterClassDeclaration(self)
+            if hasattr( listener, "enterDec_class" ):
+                listener.enterDec_class(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClassDeclaration" ):
-                listener.exitClassDeclaration(self)
+            if hasattr( listener, "exitDec_class" ):
+                listener.exitDec_class(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitClassDeclaration" ):
-                return visitor.visitClassDeclaration(self)
+            if hasattr( visitor, "visitDec_class" ):
+                return visitor.visitDec_class(self)
             else:
                 return visitor.visitChildren(self)
-
 
 
 
@@ -388,6 +410,7 @@ class MiniJavaParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_classDeclaration)
         self._la = 0 # Token type
         try:
+            localctx = MiniJavaParser.Dec_classContext(self, localctx)
             self.enterOuterAlt(localctx, 1)
             self.state = 43
             self.match(MiniJavaParser.T__0)
@@ -440,30 +463,41 @@ class MiniJavaParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def mtype(self):
-            return self.getTypedRuleContext(MiniJavaParser.MtypeContext,0)
-
-
-        def Identifier(self):
-            return self.getToken(MiniJavaParser.Identifier, 0)
 
         def getRuleIndex(self):
             return MiniJavaParser.RULE_varDeclaration
 
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class Dec_varContext(VarDeclarationContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.VarDeclarationContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def mtype(self):
+            return self.getTypedRuleContext(MiniJavaParser.MtypeContext,0)
+
+        def Identifier(self):
+            return self.getToken(MiniJavaParser.Identifier, 0)
+
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVarDeclaration" ):
-                listener.enterVarDeclaration(self)
+            if hasattr( listener, "enterDec_var" ):
+                listener.enterDec_var(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVarDeclaration" ):
-                listener.exitVarDeclaration(self)
+            if hasattr( listener, "exitDec_var" ):
+                listener.exitDec_var(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitVarDeclaration" ):
-                return visitor.visitVarDeclaration(self)
+            if hasattr( visitor, "visitDec_var" ):
+                return visitor.visitDec_var(self)
             else:
                 return visitor.visitChildren(self)
-
 
 
 
@@ -472,6 +506,7 @@ class MiniJavaParser ( Parser ):
         localctx = MiniJavaParser.VarDeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_varDeclaration)
         try:
+            localctx = MiniJavaParser.Dec_varContext(self, localctx)
             self.enterOuterAlt(localctx, 1)
             self.state = 64
             self.mtype()
@@ -493,29 +528,41 @@ class MiniJavaParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+
+        def getRuleIndex(self):
+            return MiniJavaParser.RULE_methodDeclaration
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class Dec_methodContext(MethodDeclarationContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.MethodDeclarationContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
         def mtype(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(MiniJavaParser.MtypeContext)
             else:
                 return self.getTypedRuleContext(MiniJavaParser.MtypeContext,i)
 
-
         def Identifier(self, i:int=None):
             if i is None:
                 return self.getTokens(MiniJavaParser.Identifier)
             else:
                 return self.getToken(MiniJavaParser.Identifier, i)
-
         def expression(self):
             return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
-
 
         def varDeclaration(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(MiniJavaParser.VarDeclarationContext)
             else:
                 return self.getTypedRuleContext(MiniJavaParser.VarDeclarationContext,i)
-
 
         def statement(self, i:int=None):
             if i is None:
@@ -524,23 +571,19 @@ class MiniJavaParser ( Parser ):
                 return self.getTypedRuleContext(MiniJavaParser.StatementContext,i)
 
 
-        def getRuleIndex(self):
-            return MiniJavaParser.RULE_methodDeclaration
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMethodDeclaration" ):
-                listener.enterMethodDeclaration(self)
+            if hasattr( listener, "enterDec_method" ):
+                listener.enterDec_method(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMethodDeclaration" ):
-                listener.exitMethodDeclaration(self)
+            if hasattr( listener, "exitDec_method" ):
+                listener.exitDec_method(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMethodDeclaration" ):
-                return visitor.visitMethodDeclaration(self)
+            if hasattr( visitor, "visitDec_method" ):
+                return visitor.visitDec_method(self)
             else:
                 return visitor.visitChildren(self)
-
 
 
 
@@ -550,6 +593,7 @@ class MiniJavaParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_methodDeclaration)
         self._la = 0 # Token type
         try:
+            localctx = MiniJavaParser.Dec_methodContext(self, localctx)
             self.enterOuterAlt(localctx, 1)
             self.state = 68
             self.match(MiniJavaParser.T__2)
@@ -703,13 +747,76 @@ class MiniJavaParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def statement(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(MiniJavaParser.StatementContext)
+
+        def getRuleIndex(self):
+            return MiniJavaParser.RULE_statement
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class State_printContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterState_print" ):
+                listener.enterState_print(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitState_print" ):
+                listener.exitState_print(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitState_print" ):
+                return visitor.visitState_print(self)
             else:
-                return self.getTypedRuleContext(MiniJavaParser.StatementContext,i)
+                return visitor.visitChildren(self)
 
 
+    class State_defContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Identifier(self):
+            return self.getToken(MiniJavaParser.Identifier, 0)
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterState_def" ):
+                listener.enterState_def(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitState_def" ):
+                listener.exitState_def(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitState_def" ):
+                return visitor.visitState_def(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class State_array_defContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Identifier(self):
+            return self.getToken(MiniJavaParser.Identifier, 0)
         def expression(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
@@ -717,26 +824,106 @@ class MiniJavaParser ( Parser ):
                 return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
 
 
-        def Identifier(self):
-            return self.getToken(MiniJavaParser.Identifier, 0)
-
-        def getRuleIndex(self):
-            return MiniJavaParser.RULE_statement
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStatement" ):
-                listener.enterStatement(self)
+            if hasattr( listener, "enterState_array_def" ):
+                listener.enterState_array_def(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStatement" ):
-                listener.exitStatement(self)
+            if hasattr( listener, "exitState_array_def" ):
+                listener.exitState_array_def(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitStatement" ):
-                return visitor.visitStatement(self)
+            if hasattr( visitor, "visitState_array_def" ):
+                return visitor.visitState_array_def(self)
             else:
                 return visitor.visitChildren(self)
 
+
+    class State_ifContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+        def statement(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.StatementContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.StatementContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterState_if" ):
+                listener.enterState_if(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitState_if" ):
+                listener.exitState_if(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitState_if" ):
+                return visitor.visitState_if(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class State_whileContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+        def statement(self):
+            return self.getTypedRuleContext(MiniJavaParser.StatementContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterState_while" ):
+                listener.enterState_while(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitState_while" ):
+                listener.exitState_while(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitState_while" ):
+                return visitor.visitState_while(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class State_lrparentsContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def statement(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.StatementContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.StatementContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterState_lrparents" ):
+                listener.enterState_lrparents(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitState_lrparents" ):
+                listener.exitState_lrparents(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitState_lrparents" ):
+                return visitor.visitState_lrparents(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -750,6 +937,7 @@ class MiniJavaParser ( Parser ):
             self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
+                localctx = MiniJavaParser.State_lrparentsContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 112
                 self.match(MiniJavaParser.T__1)
@@ -768,6 +956,7 @@ class MiniJavaParser ( Parser ):
                 pass
 
             elif la_ == 2:
+                localctx = MiniJavaParser.State_ifContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 120
                 self.match(MiniJavaParser.T__18)
@@ -786,6 +975,7 @@ class MiniJavaParser ( Parser ):
                 pass
 
             elif la_ == 3:
+                localctx = MiniJavaParser.State_whileContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
                 self.state = 128
                 self.match(MiniJavaParser.T__20)
@@ -800,6 +990,7 @@ class MiniJavaParser ( Parser ):
                 pass
 
             elif la_ == 4:
+                localctx = MiniJavaParser.State_printContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
                 self.state = 134
                 self.match(MiniJavaParser.T__21)
@@ -814,6 +1005,7 @@ class MiniJavaParser ( Parser ):
                 pass
 
             elif la_ == 5:
+                localctx = MiniJavaParser.State_defContext(self, localctx)
                 self.enterOuterAlt(localctx, 5)
                 self.state = 140
                 self.match(MiniJavaParser.Identifier)
@@ -826,6 +1018,7 @@ class MiniJavaParser ( Parser ):
                 pass
 
             elif la_ == 6:
+                localctx = MiniJavaParser.State_array_defContext(self, localctx)
                 self.enterOuterAlt(localctx, 6)
                 self.state = 145
                 self.match(MiniJavaParser.Identifier)
@@ -858,14 +1051,44 @@ class MiniJavaParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+
+        def getRuleIndex(self):
+            return MiniJavaParser.RULE_expression
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+    class Expr_intContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
         def Integer(self):
             return self.getToken(MiniJavaParser.Integer, 0)
 
-        def Boolean(self):
-            return self.getToken(MiniJavaParser.Boolean, 0)
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_int" ):
+                listener.enterExpr_int(self)
 
-        def Identifier(self):
-            return self.getToken(MiniJavaParser.Identifier, 0)
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_int" ):
+                listener.exitExpr_int(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_int" ):
+                return visitor.visitExpr_int(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_opContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
 
         def expression(self, i:int=None):
             if i is None:
@@ -874,20 +1097,269 @@ class MiniJavaParser ( Parser ):
                 return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
 
 
-        def getRuleIndex(self):
-            return MiniJavaParser.RULE_expression
-
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpression" ):
-                listener.enterExpression(self)
+            if hasattr( listener, "enterExpr_op" ):
+                listener.enterExpr_op(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpression" ):
-                listener.exitExpression(self)
+            if hasattr( listener, "exitExpr_op" ):
+                listener.exitExpr_op(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExpression" ):
-                return visitor.visitExpression(self)
+            if hasattr( visitor, "visitExpr_op" ):
+                return visitor.visitExpr_op(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_int_arrayContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_int_array" ):
+                listener.enterExpr_int_array(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_int_array" ):
+                listener.exitExpr_int_array(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_int_array" ):
+                return visitor.visitExpr_int_array(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_thisContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_this" ):
+                listener.enterExpr_this(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_this" ):
+                listener.exitExpr_this(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_this" ):
+                return visitor.visitExpr_this(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_new_arrayContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Identifier(self):
+            return self.getToken(MiniJavaParser.Identifier, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_new_array" ):
+                listener.enterExpr_new_array(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_new_array" ):
+                listener.exitExpr_new_array(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_new_array" ):
+                return visitor.visitExpr_new_array(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_method_callingContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
+
+        def Identifier(self):
+            return self.getToken(MiniJavaParser.Identifier, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_method_calling" ):
+                listener.enterExpr_method_calling(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_method_calling" ):
+                listener.exitExpr_method_calling(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_method_calling" ):
+                return visitor.visitExpr_method_calling(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_boolContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Boolean(self):
+            return self.getToken(MiniJavaParser.Boolean, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_bool" ):
+                listener.enterExpr_bool(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_bool" ):
+                listener.exitExpr_bool(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_bool" ):
+                return visitor.visitExpr_bool(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_lengthContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_length" ):
+                listener.enterExpr_length(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_length" ):
+                listener.exitExpr_length(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_length" ):
+                return visitor.visitExpr_length(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_notContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_not" ):
+                listener.enterExpr_not(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_not" ):
+                listener.exitExpr_not(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_not" ):
+                return visitor.visitExpr_not(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_lrparentsContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self):
+            return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_lrparents" ):
+                listener.enterExpr_lrparents(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_lrparents" ):
+                listener.exitExpr_lrparents(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_lrparents" ):
+                return visitor.visitExpr_lrparents(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_idContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Identifier(self):
+            return self.getToken(MiniJavaParser.Identifier, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_id" ):
+                listener.enterExpr_id(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_id" ):
+                listener.exitExpr_id(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_id" ):
+                return visitor.visitExpr_id(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_arrayContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_array" ):
+                listener.enterExpr_array(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_array" ):
+                listener.exitExpr_array(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_array" ):
+                return visitor.visitExpr_array(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -907,26 +1379,42 @@ class MiniJavaParser ( Parser ):
             self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
+                localctx = MiniJavaParser.Expr_intContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+
                 self.state = 156
                 self.match(MiniJavaParser.Integer)
                 pass
 
             elif la_ == 2:
+                localctx = MiniJavaParser.Expr_boolContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 157
                 self.match(MiniJavaParser.Boolean)
                 pass
 
             elif la_ == 3:
+                localctx = MiniJavaParser.Expr_idContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 158
                 self.match(MiniJavaParser.Identifier)
                 pass
 
             elif la_ == 4:
+                localctx = MiniJavaParser.Expr_thisContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 159
                 self.match(MiniJavaParser.T__30)
                 pass
 
             elif la_ == 5:
+                localctx = MiniJavaParser.Expr_int_arrayContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 160
                 self.match(MiniJavaParser.T__31)
                 self.state = 161
@@ -940,6 +1428,9 @@ class MiniJavaParser ( Parser ):
                 pass
 
             elif la_ == 6:
+                localctx = MiniJavaParser.Expr_new_arrayContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 166
                 self.match(MiniJavaParser.T__31)
                 self.state = 167
@@ -951,6 +1442,9 @@ class MiniJavaParser ( Parser ):
                 pass
 
             elif la_ == 7:
+                localctx = MiniJavaParser.Expr_notContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 170
                 self.match(MiniJavaParser.T__32)
                 self.state = 171
@@ -958,6 +1452,9 @@ class MiniJavaParser ( Parser ):
                 pass
 
             elif la_ == 8:
+                localctx = MiniJavaParser.Expr_lrparentsContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
                 self.state = 172
                 self.match(MiniJavaParser.T__6)
                 self.state = 173
@@ -980,7 +1477,7 @@ class MiniJavaParser ( Parser ):
                     self._errHandler.sync(self);
                     la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
                     if la_ == 1:
-                        localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = MiniJavaParser.Expr_opContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 178
                         if not self.precpred(self._ctx, 12):
@@ -997,7 +1494,7 @@ class MiniJavaParser ( Parser ):
                         pass
 
                     elif la_ == 2:
-                        localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = MiniJavaParser.Expr_arrayContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 181
                         if not self.precpred(self._ctx, 11):
@@ -1012,7 +1509,7 @@ class MiniJavaParser ( Parser ):
                         pass
 
                     elif la_ == 3:
-                        localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = MiniJavaParser.Expr_lengthContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 186
                         if not self.precpred(self._ctx, 10):
@@ -1025,7 +1522,7 @@ class MiniJavaParser ( Parser ):
                         pass
 
                     elif la_ == 4:
-                        localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
+                        localctx = MiniJavaParser.Expr_method_callingContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 189
                         if not self.precpred(self._ctx, 9):
