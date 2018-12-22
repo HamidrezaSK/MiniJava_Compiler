@@ -1,14 +1,11 @@
-# Generated from /Users/MichaelChen/Projects/Project_For_Compiler/src/MiniJava.g4 by ANTLR 4.7.2
+# Generated from MiniJava.g4 by ANTLR 4.5.3
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
-from typing.io import TextIO
-import sys
-
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3)")
+        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3)")
         buf.write("\u00d4\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\3\2\3\2\7\2\25\n\2\f\2\16\2\30\13\2\3")
         buf.write("\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
@@ -27,34 +24,34 @@ def serializedATN():
         buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u00c7\n\t\f\t\16")
         buf.write("\t\u00ca\13\t\5\t\u00cc\n\t\3\t\7\t\u00cf\n\t\f\t\16\t")
         buf.write("\u00d2\13\t\3\t\2\3\20\n\2\4\6\b\n\f\16\20\2\3\3\2\32")
-        buf.write("\36\2\u00e9\2\22\3\2\2\2\4\33\3\2\2\2\6-\3\2\2\2\bB\3")
-        buf.write("\2\2\2\nF\3\2\2\2\fp\3\2\2\2\16\u009b\3\2\2\2\20\u00b2")
-        buf.write("\3\2\2\2\22\26\5\4\3\2\23\25\5\6\4\2\24\23\3\2\2\2\25")
-        buf.write("\30\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\31\3\2\2\2")
-        buf.write("\30\26\3\2\2\2\31\32\7\2\2\3\32\3\3\2\2\2\33\34\7\3\2")
-        buf.write("\2\34\35\7%\2\2\35\36\7\4\2\2\36\37\7\5\2\2\37 \7\6\2")
-        buf.write("\2 !\7\7\2\2!\"\7\b\2\2\"#\7\t\2\2#$\7\n\2\2$%\7\13\2")
-        buf.write("\2%&\7\f\2\2&\'\7%\2\2\'(\7\r\2\2()\7\4\2\2)*\5\16\b\2")
-        buf.write("*+\7\16\2\2+,\7\16\2\2,\5\3\2\2\2-.\7\3\2\2.\61\7%\2\2")
-        buf.write("/\60\7\17\2\2\60\62\7%\2\2\61/\3\2\2\2\61\62\3\2\2\2\62")
-        buf.write("\63\3\2\2\2\63\67\7\4\2\2\64\66\5\b\5\2\65\64\3\2\2\2")
-        buf.write("\669\3\2\2\2\67\65\3\2\2\2\678\3\2\2\28=\3\2\2\29\67\3")
-        buf.write("\2\2\2:<\5\n\6\2;:\3\2\2\2<?\3\2\2\2=;\3\2\2\2=>\3\2\2")
-        buf.write("\2>@\3\2\2\2?=\3\2\2\2@A\7\16\2\2A\7\3\2\2\2BC\5\f\7\2")
-        buf.write("CD\7%\2\2DE\7\20\2\2E\t\3\2\2\2FG\7\5\2\2GH\5\f\7\2HI")
-        buf.write("\7%\2\2IU\7\t\2\2JK\5\f\7\2KR\7%\2\2LM\7\21\2\2MN\5\f")
-        buf.write("\7\2NO\7%\2\2OQ\3\2\2\2PL\3\2\2\2QT\3\2\2\2RP\3\2\2\2")
-        buf.write("RS\3\2\2\2SV\3\2\2\2TR\3\2\2\2UJ\3\2\2\2UV\3\2\2\2VW\3")
-        buf.write("\2\2\2WX\7\r\2\2X\\\7\4\2\2Y[\5\b\5\2ZY\3\2\2\2[^\3\2")
-        buf.write("\2\2\\Z\3\2\2\2\\]\3\2\2\2]b\3\2\2\2^\\\3\2\2\2_a\5\16")
-        buf.write("\b\2`_\3\2\2\2ad\3\2\2\2b`\3\2\2\2bc\3\2\2\2ce\3\2\2\2")
-        buf.write("db\3\2\2\2ef\7\22\2\2fg\5\20\t\2gh\7\20\2\2hi\7\16\2\2")
-        buf.write("i\13\3\2\2\2jk\7\23\2\2kl\7\13\2\2lq\7\f\2\2mq\7\24\2")
-        buf.write("\2nq\7\23\2\2oq\7%\2\2pj\3\2\2\2pm\3\2\2\2pn\3\2\2\2p")
-        buf.write("o\3\2\2\2q\r\3\2\2\2rv\7\4\2\2su\5\16\b\2ts\3\2\2\2ux")
-        buf.write("\3\2\2\2vt\3\2\2\2vw\3\2\2\2wy\3\2\2\2xv\3\2\2\2y\u009c")
-        buf.write("\7\16\2\2z{\7\25\2\2{|\7\t\2\2|}\5\20\t\2}~\7\r\2\2~\177")
-        buf.write("\5\16\b\2\177\u0080\7\26\2\2\u0080\u0081\5\16\b\2\u0081")
+        buf.write("\36\u00e9\2\22\3\2\2\2\4\33\3\2\2\2\6-\3\2\2\2\bB\3\2")
+        buf.write("\2\2\nF\3\2\2\2\fp\3\2\2\2\16\u009b\3\2\2\2\20\u00b2\3")
+        buf.write("\2\2\2\22\26\5\4\3\2\23\25\5\6\4\2\24\23\3\2\2\2\25\30")
+        buf.write("\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\31\3\2\2\2\30")
+        buf.write("\26\3\2\2\2\31\32\7\2\2\3\32\3\3\2\2\2\33\34\7\3\2\2\34")
+        buf.write("\35\7%\2\2\35\36\7\4\2\2\36\37\7\5\2\2\37 \7\6\2\2 !\7")
+        buf.write("\7\2\2!\"\7\b\2\2\"#\7\t\2\2#$\7\n\2\2$%\7\13\2\2%&\7")
+        buf.write("\f\2\2&\'\7%\2\2\'(\7\r\2\2()\7\4\2\2)*\5\16\b\2*+\7\16")
+        buf.write("\2\2+,\7\16\2\2,\5\3\2\2\2-.\7\3\2\2.\61\7%\2\2/\60\7")
+        buf.write("\17\2\2\60\62\7%\2\2\61/\3\2\2\2\61\62\3\2\2\2\62\63\3")
+        buf.write("\2\2\2\63\67\7\4\2\2\64\66\5\b\5\2\65\64\3\2\2\2\669\3")
+        buf.write("\2\2\2\67\65\3\2\2\2\678\3\2\2\28=\3\2\2\29\67\3\2\2\2")
+        buf.write(":<\5\n\6\2;:\3\2\2\2<?\3\2\2\2=;\3\2\2\2=>\3\2\2\2>@\3")
+        buf.write("\2\2\2?=\3\2\2\2@A\7\16\2\2A\7\3\2\2\2BC\5\f\7\2CD\7%")
+        buf.write("\2\2DE\7\20\2\2E\t\3\2\2\2FG\7\5\2\2GH\5\f\7\2HI\7%\2")
+        buf.write("\2IU\7\t\2\2JK\5\f\7\2KR\7%\2\2LM\7\21\2\2MN\5\f\7\2N")
+        buf.write("O\7%\2\2OQ\3\2\2\2PL\3\2\2\2QT\3\2\2\2RP\3\2\2\2RS\3\2")
+        buf.write("\2\2SV\3\2\2\2TR\3\2\2\2UJ\3\2\2\2UV\3\2\2\2VW\3\2\2\2")
+        buf.write("WX\7\r\2\2X\\\7\4\2\2Y[\5\b\5\2ZY\3\2\2\2[^\3\2\2\2\\")
+        buf.write("Z\3\2\2\2\\]\3\2\2\2]b\3\2\2\2^\\\3\2\2\2_a\5\16\b\2`")
+        buf.write("_\3\2\2\2ad\3\2\2\2b`\3\2\2\2bc\3\2\2\2ce\3\2\2\2db\3")
+        buf.write("\2\2\2ef\7\22\2\2fg\5\20\t\2gh\7\20\2\2hi\7\16\2\2i\13")
+        buf.write("\3\2\2\2jk\7\23\2\2kl\7\13\2\2lq\7\f\2\2mq\7\24\2\2nq")
+        buf.write("\7\23\2\2oq\7%\2\2pj\3\2\2\2pm\3\2\2\2pn\3\2\2\2po\3\2")
+        buf.write("\2\2q\r\3\2\2\2rv\7\4\2\2su\5\16\b\2ts\3\2\2\2ux\3\2\2")
+        buf.write("\2vt\3\2\2\2vw\3\2\2\2wy\3\2\2\2xv\3\2\2\2y\u009c\7\16")
+        buf.write("\2\2z{\7\25\2\2{|\7\t\2\2|}\5\20\t\2}~\7\r\2\2~\177\5")
+        buf.write("\16\b\2\177\u0080\7\26\2\2\u0080\u0081\5\16\b\2\u0081")
         buf.write("\u009c\3\2\2\2\u0082\u0083\7\27\2\2\u0083\u0084\7\t\2")
         buf.write("\2\u0084\u0085\5\20\t\2\u0085\u0086\7\r\2\2\u0086\u0087")
         buf.write("\5\16\b\2\u0087\u009c\3\2\2\2\u0088\u0089\7\30\2\2\u0089")
@@ -178,12 +175,11 @@ class MiniJavaParser ( Parser ):
     LineComment=38
     Comment=39
 
-    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
-        super().__init__(input, output)
-        self.checkVersion("4.7.2")
+    def __init__(self, input:TokenStream):
+        super().__init__(input)
+        self.checkVersion("4.5.3")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
-
 
 
 
@@ -255,7 +251,6 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class MainClassContext(ParserRuleContext):
 
@@ -341,7 +336,6 @@ class MiniJavaParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ClassDeclarationContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -400,7 +394,6 @@ class MiniJavaParser ( Parser ):
             self.state = 44
             self.match(MiniJavaParser.Identifier)
             self.state = 47
-            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==MiniJavaParser.T__12:
                 self.state = 45
@@ -440,7 +433,6 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class VarDeclarationContext(ParserRuleContext):
 
@@ -494,7 +486,6 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class MethodDeclarationContext(ParserRuleContext):
 
@@ -569,7 +560,6 @@ class MiniJavaParser ( Parser ):
             self.state = 71
             self.match(MiniJavaParser.T__6)
             self.state = 83
-            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__16) | (1 << MiniJavaParser.T__17) | (1 << MiniJavaParser.Identifier))) != 0):
                 self.state = 72
@@ -633,7 +623,6 @@ class MiniJavaParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class MtypeContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -669,7 +658,7 @@ class MiniJavaParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_mtype)
         try:
             self.state = 110
-            self._errHandler.sync(self)
+            self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -707,7 +696,6 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class StatementContext(ParserRuleContext):
 
@@ -759,7 +747,7 @@ class MiniJavaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 153
-            self._errHandler.sync(self)
+            self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -864,7 +852,6 @@ class MiniJavaParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ExpressionContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -917,7 +904,7 @@ class MiniJavaParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 176
-            self._errHandler.sync(self)
+            self._errHandler.sync(self);
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
                 self.state = 156
@@ -990,7 +977,7 @@ class MiniJavaParser ( Parser ):
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 204
-                    self._errHandler.sync(self)
+                    self._errHandler.sync(self);
                     la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
                     if la_ == 1:
                         localctx = MiniJavaParser.ExpressionContext(self, _parentctx, _parentState)
@@ -1004,7 +991,6 @@ class MiniJavaParser ( Parser ):
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27))) != 0)):
                             self._errHandler.recoverInline(self)
                         else:
-                            self._errHandler.reportMatch(self)
                             self.consume()
                         self.state = 180
                         self.expression(13)
@@ -1052,7 +1038,6 @@ class MiniJavaParser ( Parser ):
                         self.state = 192
                         self.match(MiniJavaParser.T__6)
                         self.state = 201
-                        self._errHandler.sync(self)
                         _la = self._input.LA(1)
                         if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__6) | (1 << MiniJavaParser.T__30) | (1 << MiniJavaParser.T__31) | (1 << MiniJavaParser.T__32) | (1 << MiniJavaParser.Boolean) | (1 << MiniJavaParser.Identifier) | (1 << MiniJavaParser.Integer))) != 0):
                             self.state = 193

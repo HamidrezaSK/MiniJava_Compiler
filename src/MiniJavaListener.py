@@ -1,4 +1,4 @@
-# Generated from /Users/MichaelChen/Projects/Project_For_Compiler/src/MiniJava.g4 by ANTLR 4.7.2
+# Generated from MiniJava.g4 by ANTLR 4.5.3
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .MiniJavaParser import MiniJavaParser
