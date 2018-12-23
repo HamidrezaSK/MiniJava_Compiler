@@ -1,11 +1,14 @@
-# Generated from MiniJava.g4 by ANTLR 4.5.3
+# Generated from MiniJava.g4 by ANTLR 4.7.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
+from typing.io import TextIO
+import sys
+
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3)")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3)")
         buf.write("\u00ee\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\3\2\3\2\7\2\25\n\2\f\2\16\2\30\13\2\3")
         buf.write("\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
@@ -25,7 +28,7 @@ def serializedATN():
         buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
         buf.write("\t\3\t\7\t\u00db\n\t\f\t\16\t\u00de\13\t\5\t\u00e0\n\t")
         buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u00e9\n\t\f\t\16\t\u00ec")
-        buf.write("\13\t\3\t\2\3\20\n\2\4\6\b\n\f\16\20\2\3\3\2\32\36\u0109")
+        buf.write("\13\t\3\t\2\3\20\n\2\4\6\b\n\f\16\20\2\3\3\2\32\36\2\u0109")
         buf.write("\2\22\3\2\2\2\4\33\3\2\2\2\6-\3\2\2\2\bB\3\2\2\2\nF\3")
         buf.write("\2\2\2\fp\3\2\2\2\16\u009b\3\2\2\2\20\u00c6\3\2\2\2\22")
         buf.write("\26\5\4\3\2\23\25\5\6\4\2\24\23\3\2\2\2\25\30\3\2\2\2")
@@ -189,11 +192,12 @@ class MiniJavaParser ( Parser ):
     LineComment=38
     Comment=39
 
-    def __init__(self, input:TokenStream):
-        super().__init__(input)
-        self.checkVersion("4.5.3")
+    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
+        super().__init__(input, output)
+        self.checkVersion("4.7.2")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
+
 
 
 
@@ -265,6 +269,7 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class MainClassContext(ParserRuleContext):
 
@@ -362,6 +367,7 @@ class MiniJavaParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ClassDeclarationContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -431,6 +437,7 @@ class MiniJavaParser ( Parser ):
             self.state = 44
             self.match(MiniJavaParser.Identifier)
             self.state = 47
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==MiniJavaParser.T__12:
                 self.state = 45
@@ -470,6 +477,7 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class VarDeclarationContext(ParserRuleContext):
 
@@ -535,6 +543,7 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class MethodDeclarationContext(ParserRuleContext):
 
@@ -618,6 +627,7 @@ class MiniJavaParser ( Parser ):
             self.state = 71
             self.match(MiniJavaParser.T__6)
             self.state = 83
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__16) | (1 << MiniJavaParser.T__17) | (1 << MiniJavaParser.Identifier))) != 0):
                 self.state = 72
@@ -681,6 +691,7 @@ class MiniJavaParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MtypeContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -716,7 +727,7 @@ class MiniJavaParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_mtype)
         try:
             self.state = 110
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
@@ -754,6 +765,7 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class StatementContext(ParserRuleContext):
 
@@ -948,7 +960,7 @@ class MiniJavaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.state = 153
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
             if la_ == 1:
                 localctx = MiniJavaParser.State_lrparentsContext(self, localctx)
@@ -1058,6 +1070,7 @@ class MiniJavaParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class ExpressionContext(ParserRuleContext):
 
@@ -1540,7 +1553,7 @@ class MiniJavaParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 196
-            self._errHandler.sync(self);
+            self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
                 localctx = MiniJavaParser.Expr_intContext(self, localctx)
@@ -1636,6 +1649,7 @@ class MiniJavaParser ( Parser ):
                 if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27))) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
+                    self._errHandler.reportMatch(self)
                     self.consume()
                 self.state = 177
                 self.expression(5)
@@ -1694,7 +1708,7 @@ class MiniJavaParser ( Parser ):
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 230
-                    self._errHandler.sync(self);
+                    self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
                     if la_ == 1:
                         localctx = MiniJavaParser.Expr_opContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
@@ -1708,6 +1722,7 @@ class MiniJavaParser ( Parser ):
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27))) != 0)):
                             self._errHandler.recoverInline(self)
                         else:
+                            self._errHandler.reportMatch(self)
                             self.consume()
                         self.state = 200
                         self.expression(19)
@@ -1755,6 +1770,7 @@ class MiniJavaParser ( Parser ):
                         self.state = 212
                         self.match(MiniJavaParser.T__6)
                         self.state = 221
+                        self._errHandler.sync(self)
                         _la = self._input.LA(1)
                         if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__6) | (1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27) | (1 << MiniJavaParser.T__30) | (1 << MiniJavaParser.T__31) | (1 << MiniJavaParser.T__32) | (1 << MiniJavaParser.Boolean) | (1 << MiniJavaParser.Identifier) | (1 << MiniJavaParser.Integer))) != 0):
                             self.state = 213
@@ -1789,6 +1805,7 @@ class MiniJavaParser ( Parser ):
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27))) != 0)):
                             self._errHandler.recoverInline(self)
                         else:
+                            self._errHandler.reportMatch(self)
                             self.consume()
                         self.notifyErrorListeners('Error: missing the RHS of the operator')
                         pass

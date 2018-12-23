@@ -1,4 +1,4 @@
-# java -Xmx500M -cp . -jar antlr-4.5.3-complete.jar -visitor -Dlanguage=Python3 MiniJava.g4
+# java -Xmx500M -cp . -jar antlr-4.7.2-complete.jar -visitor -Dlanguage=Python3 MiniJava.g4
 
 from antlr4 import *
 import sys, os, ast, re

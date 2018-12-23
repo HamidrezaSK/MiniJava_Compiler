@@ -98,7 +98,7 @@ Boolean : 'true'
         ;
 
 Identifier  : [a-zA-Z_][a-zA-Z0-9_]*
-            | [0-9][a-zA-Z_][a-zA-Z0-9_]*
+            | [0-9]+[a-zA-Z_][a-zA-Z0-9_]*
                 {self.notifyErrorListeners('Error: identifier starting with digit')}
             ;
 

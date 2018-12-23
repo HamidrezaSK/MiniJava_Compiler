@@ -11,8 +11,6 @@ from antlr4.Utils import escapeWhitespace
 from antlr4.tree.Tree import RuleNode, ErrorNode, TerminalNode
 import pydot
 
-iost = io.StringIO()
-
 # Treelist is modified as [node_name, subtrees]
 
 index = 0   # index number of the tree
@@ -39,7 +37,7 @@ def draw_tree_node(treelist, label=''):
     mid = ''
     global index
     index = 0
-    buf = iost.StringIO()
+    buf = io.StringIO()
     print_tree_parent(treelist, buf)
     mid = buf.getvalue()
     string += mid + '}'
@@ -48,7 +46,7 @@ def draw_tree_node(treelist, label=''):
 
 def draw_pic(treelist, out_name=''):
     node = draw_tree_node(treelist, out_name)
-    pydot.graph_from_dot_data(node)[0].write_png(outname+".png")
+    pydot.graph_from_dot_data(node)[0].write_png(out_name+".png")
 
 def print_tree(treelist, height):
     string = ''
@@ -72,10 +70,10 @@ class TreeList(Trees):
         if recog is not None:
             ruleNames = recog.ruleNames
         s = escapeWhitespace(cls.getNodeText(t, ruleNames), False)
-        lis = [s]
+        lis = [s, None]
         if t.getChildCount()==0:
             return lis
-        lis.append( [] )
+        lis[1] = []
         for i in range(t.getChildCount()):
             lis[1].append(cls.toStringTreeList(t.getChild(i), ruleNames))
         return lis

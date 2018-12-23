@@ -15,7 +15,7 @@ import pydot
 
 start_rule = 'goal'
 pic = False
-lisp = True
+lisp = False
 easytree = False
 outname = 'default'
 
@@ -34,18 +34,22 @@ def process(input_stream, class_lexer, class_parser):
 
     parser = class_parser(token_stream)
     # setup the error listener
-    parser.removeErrorListeners()
-    parser.addErrorListener(MiniJava_ErrorListener)
+    #parser.removeErrorListeners()
+    #parser.addErrorListener(MiniJava_ErrorListener)
 
     # get the starting rule and execute it
     func_start_rule = getattr(parser, start_rule)
-    parser_ret = func_start_rule()
+    #parser_ret = func_start_rule()  # ?
+    parser_ret = parser.goal()
 
     # semantic analysis
+    #semantic_check(parser_ret)
+    '''
     try:
         semantic_check(parser_ret)
     except:
         print ('Semantic Check Error')
+    '''
     
     treelist = TreeList.toStringTreeList(parser_ret, recog=parser)
     if easytree:
