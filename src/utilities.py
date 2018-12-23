@@ -72,7 +72,7 @@ class TreeList(Trees):
         if recog is not None:
             ruleNames = recog.ruleNames
         s = escapeWhitespace(cls.getNodeText(t, ruleNames), False)
-        lis = [s, None]
+        lis = [s]
         if t.getChildCount()==0:
             return lis
         lis.append( [] )
