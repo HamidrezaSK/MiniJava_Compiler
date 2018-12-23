@@ -7,7 +7,7 @@ class MiniJava_ErrorListener(ErrorListener):
     An inherited listener class to listen to the syntax errors.
     The error triger is defined in the .g4 file.
     '''
-
+    
     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
         '''
         An overwrite of the original method.
@@ -15,7 +15,7 @@ class MiniJava_ErrorListener(ErrorListener):
         recognizer: What parser got the error
         offendingSymbol: The offending token in the input token stream
         '''
-        print ( 'Line '+str(line)+':'+str(column)+' '+msg+'\n' )
+        print ( 'row:'+str(line)+', column:'+str(column)+'\t'+msg, file=sys.stderr )
         self.print_detail(recognizer, offendingSymbol, line, column, msg, e)
     
     def print_detail(self, recognizer, offendingSymbol, line, column, msg, e):
@@ -23,7 +23,7 @@ class MiniJava_ErrorListener(ErrorListener):
         in_stream = token.getInputStream()
         string = str(in_stream)
         string = string.split('\n')[line-1] # get the error line
-        print (string+'\n')
+        print (string)
 
         # Using '*' to show the wrong token 
         # e.g. int 0number
@@ -32,19 +32,12 @@ class MiniJava_ErrorListener(ErrorListener):
 
         # detecting the '\t' at the start
         underline = ''
-        start = 0
-        for char in string:
-            if char == '\t':
-                start += 1
+        for i in range(column):
+            if string[i] == '\t':
                 underline += '\t'
             else:
-                break
-        # detecting the '\t' before the error token
-        for i in range(offendingSymbol.column):
-            if string[start+i] == '\t':
-                underline += '\t'
-            else:
-                underline += ' '    # usual character
-        underline += '*'    # the location of the wrong token
+                underline += ' '
+        underline += '↑'
+
         print (underline)
         
