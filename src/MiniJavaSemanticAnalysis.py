@@ -241,22 +241,22 @@ class My_Vistor(MiniJavaVisitor):
         # can't habe been declared
         current_region = self.regions.get_top()
         array_name = ctx.Identifier().getText()
-        array_type = ctx.mtype().getText()
         if not self.check(array_name):
-            current_region.push(array_name, array_type)
+            current_region.push(array_name, 'used')
         else:
             self.err_id_multidef("Multiple Array Declare: " + array_name, ctx.Identifier().getSymbol())
         res = self.visitChildren(ctx)
         return res
     
+    '''
     def visitExpr_method_calling(self, ctx):
         # no new region
         # must have been declared
         current_region = self.regions.get_top()
-        method_name = ctx.Identifier(0).getText()
-        method_type = ctx.mtype(0).getText()
+        method_name = ctx.Identifier().getText()
 
         if not self.check(method_name):
-            self.err_id_undetected("Undefined Method: " + method_name, ctx.Identifier(0).getSymbol())
+            self.err_id_undetected("Undefined Method: " + method_name, ctx.Identifier().getSymbol())
         res = self.visitChildren(ctx)
         return res
+    '''

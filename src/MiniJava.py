@@ -39,11 +39,10 @@ def process(input_stream, class_lexer, class_parser):
 
     # get the starting rule and execute it
     func_start_rule = getattr(parser, start_rule)
-    #parser_ret = func_start_rule()  # ?
-    parser_ret = parser.goal()
+    parser_ret = func_start_rule()  # ?
 
     # semantic analysis
-    #semantic_check(parser_ret)
+    semantic_check(parser_ret)
     '''
     try:
         semantic_check(parser_ret)
@@ -107,7 +106,8 @@ def main():
     try:
         input_file = remain[0]
         if outname == 'default':
-            outname = input_file + '_out'
+            name, _ = input_file.split('.')
+            outname = name + '_out'
     except:
         print (usage)
         exit(0)
