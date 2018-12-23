@@ -98,12 +98,12 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#state_def.
-    def enterState_def(self, ctx:MiniJavaParser.State_defContext):
+    # Enter a parse tree produced by MiniJavaParser#state_assign.
+    def enterState_assign(self, ctx:MiniJavaParser.State_assignContext):
         pass
 
-    # Exit a parse tree produced by MiniJavaParser#state_def.
-    def exitState_def(self, ctx:MiniJavaParser.State_defContext):
+    # Exit a parse tree produced by MiniJavaParser#state_assign.
+    def exitState_assign(self, ctx:MiniJavaParser.State_assignContext):
         pass
 
 
@@ -113,6 +113,96 @@ class MiniJavaListener(ParseTreeListener):
 
     # Exit a parse tree produced by MiniJavaParser#state_array_assign.
     def exitState_array_assign(self, ctx:MiniJavaParser.State_array_assignContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#err_miss_RHS.
+    def enterErr_miss_RHS(self, ctx:MiniJavaParser.Err_miss_RHSContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#err_miss_RHS.
+    def exitErr_miss_RHS(self, ctx:MiniJavaParser.Err_miss_RHSContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#err_lparent_closing.
+    def enterErr_lparent_closing(self, ctx:MiniJavaParser.Err_lparent_closingContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#err_lparent_closing.
+    def exitErr_lparent_closing(self, ctx:MiniJavaParser.Err_lparent_closingContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#expr_this.
+    def enterExpr_this(self, ctx:MiniJavaParser.Expr_thisContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#expr_this.
+    def exitExpr_this(self, ctx:MiniJavaParser.Expr_thisContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#err_many_lparents.
+    def enterErr_many_lparents(self, ctx:MiniJavaParser.Err_many_lparentsContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#err_many_lparents.
+    def exitErr_many_lparents(self, ctx:MiniJavaParser.Err_many_lparentsContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#expr_bool.
+    def enterExpr_bool(self, ctx:MiniJavaParser.Expr_boolContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#expr_bool.
+    def exitExpr_bool(self, ctx:MiniJavaParser.Expr_boolContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#expr_length.
+    def enterExpr_length(self, ctx:MiniJavaParser.Expr_lengthContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#expr_length.
+    def exitExpr_length(self, ctx:MiniJavaParser.Expr_lengthContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#err_rparent_closing.
+    def enterErr_rparent_closing(self, ctx:MiniJavaParser.Err_rparent_closingContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#err_rparent_closing.
+    def exitErr_rparent_closing(self, ctx:MiniJavaParser.Err_rparent_closingContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#expr_lrparents.
+    def enterExpr_lrparents(self, ctx:MiniJavaParser.Expr_lrparentsContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#expr_lrparents.
+    def exitExpr_lrparents(self, ctx:MiniJavaParser.Expr_lrparentsContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#err_many_rparents.
+    def enterErr_many_rparents(self, ctx:MiniJavaParser.Err_many_rparentsContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#err_many_rparents.
+    def exitErr_many_rparents(self, ctx:MiniJavaParser.Err_many_rparentsContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#expr_array.
+    def enterExpr_array(self, ctx:MiniJavaParser.Expr_arrayContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#expr_array.
+    def exitExpr_array(self, ctx:MiniJavaParser.Expr_arrayContext):
         pass
 
 
@@ -143,21 +233,21 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#expr_this.
-    def enterExpr_this(self, ctx:MiniJavaParser.Expr_thisContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#expr_this.
-    def exitExpr_this(self, ctx:MiniJavaParser.Expr_thisContext):
-        pass
-
-
     # Enter a parse tree produced by MiniJavaParser#expr_new_array.
     def enterExpr_new_array(self, ctx:MiniJavaParser.Expr_new_arrayContext):
         pass
 
     # Exit a parse tree produced by MiniJavaParser#expr_new_array.
     def exitExpr_new_array(self, ctx:MiniJavaParser.Expr_new_arrayContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniJavaParser#err_miss_LHS.
+    def enterErr_miss_LHS(self, ctx:MiniJavaParser.Err_miss_LHSContext):
+        pass
+
+    # Exit a parse tree produced by MiniJavaParser#err_miss_LHS.
+    def exitErr_miss_LHS(self, ctx:MiniJavaParser.Err_miss_LHSContext):
         pass
 
 
@@ -170,24 +260,6 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#expr_bool.
-    def enterExpr_bool(self, ctx:MiniJavaParser.Expr_boolContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#expr_bool.
-    def exitExpr_bool(self, ctx:MiniJavaParser.Expr_boolContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#expr_length.
-    def enterExpr_length(self, ctx:MiniJavaParser.Expr_lengthContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#expr_length.
-    def exitExpr_length(self, ctx:MiniJavaParser.Expr_lengthContext):
-        pass
-
-
     # Enter a parse tree produced by MiniJavaParser#expr_not.
     def enterExpr_not(self, ctx:MiniJavaParser.Expr_notContext):
         pass
@@ -197,30 +269,12 @@ class MiniJavaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MiniJavaParser#expr_lrparents.
-    def enterExpr_lrparents(self, ctx:MiniJavaParser.Expr_lrparentsContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#expr_lrparents.
-    def exitExpr_lrparents(self, ctx:MiniJavaParser.Expr_lrparentsContext):
-        pass
-
-
     # Enter a parse tree produced by MiniJavaParser#expr_id.
     def enterExpr_id(self, ctx:MiniJavaParser.Expr_idContext):
         pass
 
     # Exit a parse tree produced by MiniJavaParser#expr_id.
     def exitExpr_id(self, ctx:MiniJavaParser.Expr_idContext):
-        pass
-
-
-    # Enter a parse tree produced by MiniJavaParser#expr_array.
-    def enterExpr_array(self, ctx:MiniJavaParser.Expr_arrayContext):
-        pass
-
-    # Exit a parse tree produced by MiniJavaParser#expr_array.
-    def exitExpr_array(self, ctx:MiniJavaParser.Expr_arrayContext):
         pass
 
 

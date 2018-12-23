@@ -59,13 +59,63 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#state_def.
-    def visitState_def(self, ctx:MiniJavaParser.State_defContext):
+    # Visit a parse tree produced by MiniJavaParser#state_assign.
+    def visitState_assign(self, ctx:MiniJavaParser.State_assignContext):
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by MiniJavaParser#state_array_assign.
     def visitState_array_assign(self, ctx:MiniJavaParser.State_array_assignContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#err_miss_RHS.
+    def visitErr_miss_RHS(self, ctx:MiniJavaParser.Err_miss_RHSContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#err_lparent_closing.
+    def visitErr_lparent_closing(self, ctx:MiniJavaParser.Err_lparent_closingContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#expr_this.
+    def visitExpr_this(self, ctx:MiniJavaParser.Expr_thisContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#err_many_lparents.
+    def visitErr_many_lparents(self, ctx:MiniJavaParser.Err_many_lparentsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#expr_bool.
+    def visitExpr_bool(self, ctx:MiniJavaParser.Expr_boolContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#expr_length.
+    def visitExpr_length(self, ctx:MiniJavaParser.Expr_lengthContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#err_rparent_closing.
+    def visitErr_rparent_closing(self, ctx:MiniJavaParser.Err_rparent_closingContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#expr_lrparents.
+    def visitExpr_lrparents(self, ctx:MiniJavaParser.Expr_lrparentsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#err_many_rparents.
+    def visitErr_many_rparents(self, ctx:MiniJavaParser.Err_many_rparentsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#expr_array.
+    def visitExpr_array(self, ctx:MiniJavaParser.Expr_arrayContext):
         return self.visitChildren(ctx)
 
 
@@ -84,13 +134,13 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#expr_this.
-    def visitExpr_this(self, ctx:MiniJavaParser.Expr_thisContext):
+    # Visit a parse tree produced by MiniJavaParser#expr_new_array.
+    def visitExpr_new_array(self, ctx:MiniJavaParser.Expr_new_arrayContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#expr_new_array.
-    def visitExpr_new_array(self, ctx:MiniJavaParser.Expr_new_arrayContext):
+    # Visit a parse tree produced by MiniJavaParser#err_miss_LHS.
+    def visitErr_miss_LHS(self, ctx:MiniJavaParser.Err_miss_LHSContext):
         return self.visitChildren(ctx)
 
 
@@ -99,33 +149,13 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#expr_bool.
-    def visitExpr_bool(self, ctx:MiniJavaParser.Expr_boolContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#expr_length.
-    def visitExpr_length(self, ctx:MiniJavaParser.Expr_lengthContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by MiniJavaParser#expr_not.
     def visitExpr_not(self, ctx:MiniJavaParser.Expr_notContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#expr_lrparents.
-    def visitExpr_lrparents(self, ctx:MiniJavaParser.Expr_lrparentsContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by MiniJavaParser#expr_id.
     def visitExpr_id(self, ctx:MiniJavaParser.Expr_idContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by MiniJavaParser#expr_array.
-    def visitExpr_array(self, ctx:MiniJavaParser.Expr_arrayContext):
         return self.visitChildren(ctx)
 
 

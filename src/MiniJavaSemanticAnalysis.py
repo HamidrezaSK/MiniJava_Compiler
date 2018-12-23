@@ -1,5 +1,5 @@
-# Made by Wang Ao, 15300240004. All rights reserved.
-
+# Created by Wang Ao, 15300240004. All rights reserved.
+__author__ = 'Wang_Ao'
 from antlr4 import *
 from MiniJavaVisitor import *
 from MiniJavaListener import *
@@ -123,7 +123,7 @@ class My_Vistor(MiniJavaVisitor):
             # correct, ut it in the current region
             current_region.push(class_name, 'main_class')
         else:
-            self.err_id_multidef("Multiple Mainclass Declare: " + classname , ctx.Identifier(0).getSymbol())
+            self.err_id_multidef("Multiple Mainclass Declare: " + class_name , ctx.Identifier(0).getSymbol())
         
         # start a new region
         self.regions.add_new()  # allocate a NEW region, discard the return
@@ -143,7 +143,7 @@ class My_Vistor(MiniJavaVisitor):
         if not self.check(class_name):  # not declared
             current_region.push(class_name, 'declared class')
         else:
-            self.err_id_multidef("Multiple Class Declare: " + classname , ctx.Identifier(0).getSymbol())
+            self.err_id_multidef("Multiple Class Declare: " + class_name , ctx.Identifier(0).getSymbol())
         
         # start a new region
         self.regions.add_new()  # allocate a new region, discard the return
@@ -182,9 +182,9 @@ class My_Vistor(MiniJavaVisitor):
             self.err_id_multidef("Multiple Method Declare: " + method_name, ctx.Identifier(0).getSymbol())
         
         new_region = self.regions.add_new() # new region for the method
-        # can't get the accurate number of parameters, check the former 6 parameters
+        # can't get the accurate number of parameters, check the former 12 parameters
         try:
-            for i in range(1, 6):
+            for i in range(1, 12):
                 # mtype(0) is the method name
                 para = ctx.Identifier(i)
                 para_name = ctx.Identifier(i).getText()
@@ -218,7 +218,7 @@ class My_Vistor(MiniJavaVisitor):
         self.regions.pop_last() # retrieve the allocated region
         return res
     
-    def visitState_def(self, ctx):
+    def visitState_assign(self, ctx):
         # no new region
         current_region = self.regions.get_top()
         id_name = ctx.Identifier().getText()

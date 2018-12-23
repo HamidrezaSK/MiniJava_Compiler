@@ -18,7 +18,7 @@ else:
 
 pwd = sys.path[0]
 files = [pwd+'/testfiles/Factorial.java', pwd+'/testfiles/BubbleSort.java']
-test_file = files[1]
+test_file = files[0]
 
 # print parse tree
 def beautify_lisp_string(in_string):

@@ -44,7 +44,7 @@ statement   : '{' (statement)* '}'
             | 'System.out.println' '(' expression ')' ';'
                 #state_print
             | Identifier '=' expression ';'
-                #state_def
+                #state_assign
             | Identifier '[' expression ']' '=' expression ';'
                 #state_array_assign
             ;
@@ -73,6 +73,24 @@ expression  : expression ('&&' | '<' | '+' | '-' | '*') expression
                 #expr_not
             | '(' expression ')'
                 #expr_lrparents
+            | expression ('&&' | '<' | '+' | '-' | '*')
+                {self.notifyErrorListeners('Error: missing the RHS of the operator')}
+                #err_miss_RHS
+            | ('&&' | '<' | '+' | '-' | '*') expression
+                {self.notifyErrorListeners('Error: missing the LHS of the operator')}
+                #err_miss_LHS
+            | '(' expression ')' ')'
+                {self.notifyErrorListeners("Error: too many ')'s")}
+                #err_many_rparents
+            | '(' '(' expression ')'
+                {self.notifyErrorListeners("Error: too many '('s")}
+                #err_many_lparents
+            | '(' expression
+                {self.notifyErrorListeners('Error: need right parent closing')}
+                #err_rparent_closing
+            | expression ')'
+                {self.notifyErrorListeners('Error: need left parent closing')}
+                #err_lparent_closing
             ;
 
 Boolean : 'true'
@@ -80,6 +98,8 @@ Boolean : 'true'
         ;
 
 Identifier  : [a-zA-Z_][a-zA-Z0-9_]*
+            | [0-9][a-zA-Z_][a-zA-Z0-9_]*
+                {self.notifyErrorListeners('Error: identifier starting with digit')}
             ;
 
 Integer : [0-9]+
