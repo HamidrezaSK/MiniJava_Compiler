@@ -311,3 +311,5 @@ Temporary Items
 
 test.*
 /test/
+*.png
+*.jpg

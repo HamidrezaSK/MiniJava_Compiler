@@ -1,141 +1,107 @@
-# Created by Wang Ao, 15300240004. All rights reserved.
-__author__ = 'Wang_Ao'
+# -*- coding: utf-8 -*-
 
 import os, sys, re
 from antlr4 import *
-import optparse
-from MiniJavaLexer import MiniJavaLexer
-from MiniJavaParser import MiniJavaParser
-from MiniJavaError_Presenter import MiniJava_ErrorListener
-from MiniJavaSemanticAnalysis import *
-from MiniJavaASTBuilder import *
-from utilities import *
 from antlr4.error import ErrorListener
-import pydot
+import argparse
 
+if __name__ is not None and "." in __name__:
+	from .MiniJavaParser import MiniJavaParser
+	from .MiniJavaLexer import MiniJavaLexer
+	from .MiniJavaVisitor import MiniJavaVisitor
+	from .MiniJavaListener import MiniJavaListener
+	from .MiniJavaError_Presenter import MiniJava_ErrorListener
+	from .MiniJavaSemanticAnalysis import *
+	from .MiniJavaASTBuilder import *
+	from .utilities import *
+else:
+	from MiniJavaParser import MiniJavaParser
+	from MiniJavaLexer import MiniJavaLexer
+	from MiniJavaVisitor import MiniJavaVisitor
+	from MiniJavaListener import MiniJavaListener
+	from MiniJavaError_Presenter import MiniJava_ErrorListener
+	from MiniJavaSemanticAnalysis import *
+	from MiniJavaASTBuilder import *
+	from utilities import *
 
-start_rule = 'goal'
-pic = False
-lisp = False
-easytree = False
-outname = 'default'
-ast = False
 
 def semantic_check(parser_ret):
-    visitor = My_Vistor()
-    visitor.visit(parser_ret)
+	visitor = My_Vistor()
+	visitor.visit(parser_ret)
+
 
 def draw(treelist, name):
-    draw_pic(treelist, name)
-    return treelist
+	draw_pic(treelist, name)
+	return treelist
 
-def process(input_stream, class_lexer, class_parser):
-    lexer = class_lexer(input_stream)
-    token_stream = CommonTokenStream(lexer)
-    token_stream.fill()
 
-    parser = class_parser(token_stream)
-    # setup the error listener
-    parser.removeErrorListeners()
-    parser.addErrorListener(MiniJava_ErrorListener())   # ()!!!
+def process(args):
+	data = open(args.input_file).read()
+	input = InputStream(data)
+	lexer = MiniJavaLexer(input)
+	stream = CommonTokenStream(lexer)
+	parser = MiniJavaParser(stream)
+	# setup the error listener
+	parser.removeErrorListeners()
+	parser.addErrorListener(MiniJava_ErrorListener())  # ()!!!
+	tree = parser.goal()
+	# semantic analysis
 
-    # get the starting rule and execute it
-    func_start_rule = getattr(parser, start_rule)
-    parser_ret = func_start_rule()
+	try:
+		semantic_check(tree)
+	except:
+		print('Error during semantic check')
+	treelist = TreeList.toStringTreeList(tree, recog=parser)
 
-    # semantic analysis
-    try:
-        semantic_check(parser_ret)
-    except:
-        print ('Error during semantic check')
-    
+	if not os.path.exists(args.output_dir):
+		os.makedirs(args.output_dir)
 
-    treelist = TreeList.toStringTreeList(parser_ret, recog=parser)
-    #print (treelist)
-    if easytree:
-        string = print_tree(treelist, 0)
-        print (string)
-    if lisp:
-        lisp_string = parser_ret.toStringTree(recog=parser)
-    if pic:
-        draw(treelist, outname + '_Parse_Tree')
-    if ast:
-        visitor = AST_Builder()
-        visitor.visit(parser_ret)
-        res = visitor.tree_list
-        draw(res, outname + '_AST')
-    
-    return parser_ret
+	file_name = args.input_file.split('/')[-1].split('.')[-2]
+
+	if args.cst:
+		cst_image = os.path.join(args.output_dir, file_name + '_cst')
+		draw(treelist, cst_image)
+		print('* CST image saved at %s.' % cst_image)
+	if args.ast:
+		ast_image = os.path.join(args.output_dir, file_name + '_ast')
+		visitor = AST_Builder()
+		visitor.visit(tree)
+		res = visitor.tree_list
+		draw(res, ast_image)
+		print('* AST image saved at %s.' % ast_image)
+
+	return tree
+
 
 def main():
-    input_file = None
-    output_file = None
-    print ("The MiniJava AST builder, made by Ao Wang and Jiangjie Chen")
-    usage = "Usage: %prog [options] inputFile\n-h for help"
-    parser = optparse.OptionParser(usage=usage)
-    parser.add_option('-p',
-                  "--pic",  
-                  metavar = "",
-                  action="store_true", 
-                  dest="pic",
-                  default=True,  
-                  help="make a parse tree picture by using Graphviz")  
-    parser.add_option("-l",
-                  "--lisptree",  
-                  metavar = "",
-                  action="store_true", 
-                  dest="lisp",
-                  default=False,  
-                  help="output the lisp tree in stdout")  
-    parser.add_option("-e",
-                  "--easytree",  
-                  metavar = "",
-                  action="store_true", 
-                  dest="easytree",
-                  default=False,  
-                  help="output the easyreading tree in stdout")
-    parser.add_option(
-                  "-o",
-                  "--outname",
-                  metavar = "FILENAME",
-                  dest="outname",
-                  default="default",  
-                  help="output file name (outname.png)") 
-    parser.add_option(
-                  "-a",
-                  "--ast",
-                  metavar = "",
-                  dest="ast",
-                  default=True,  
-                  help="make an AST picture by using Graphviz") 
-    options, remain = parser.parse_args()
+	print("The MiniJava AST builder, made by Ao Wang and Jiangjie Chen")
 
-    global lisp, pic, outname, easytree, ast
-    lisp = options.lisp
-    pic = options.pic
-    easytree = options.easytree
-    outname = options.outname
-    ast = options.ast
+	aparser = argparse.ArgumentParser()
 
-    try:
-        input_file = remain[0]
-        if outname == 'default':
-            name, _ = input_file.split('.')
-            outname = name
-    except:
-        print (usage)
-        exit(0)
+	aparser.add_argument('--input_file', '-i', type=str, default=None,
+	                     help='minijava file for parsing')
+	aparser.add_argument('--cst', action='store_true', default=False,
+	                     help='show parse tree')
+	aparser.add_argument('--ast', action='store_true', default=False,
+	                     help='show ast')
+	aparser.add_argument('--output_dir', '-o', type=str, default='output/',
+	                     help='output directory of ast/cst trees')
 
-    print ('Working...')
-    if os.path.exists(input_file) and os.path.isfile(input_file):
-        input_stream = FileStream(input_file)
-        process(input_stream, MiniJavaLexer, MiniJavaParser)
-    else:
-        print ("[ERROR] file: %s not exist"%os.path.normpath(input_file))
-    
-    print ('Done')
+	args = aparser.parse_args()
+
+	print('* Working...')
+	if os.path.exists(args.input_file) and os.path.isfile(args.input_file):
+		process(args)
+	else:
+		print("[ERROR] file: %s not exist" % os.path.normpath(args.input_file))
+
+	print('* Done.')
+
 
 if __name__ == '__main__':
-    main()
-
-    # python3 MiniJava.py -p Factorial.java 
+	''' 
+	```bash
+	python3 MiniJava.py -i testfiles/Factorial.java --ast --cst -o testfiles/test
+	```
+	'''
+	main()

@@ -17,8 +17,9 @@ else:
 	from MiniJavaListener import MiniJavaListener
 
 pwd = sys.path[0]
-files = [pwd+'/testfiles/Factorial.java', pwd+'/testfiles/BubbleSort.java']
+files = [pwd + '/testfiles/Factorial.java', pwd + '/testfiles/BubbleSort.java']
 test_file = files[0]
+
 
 # print parse tree
 def beautify_lisp_string(in_string):
@@ -38,17 +39,18 @@ def beautify_lisp_string(in_string):
 			out_string += in_string[i]
 	return out_string
 
+
 def print_tree(tree, lev, parser):
-    try:
-        print('\t' * lev + '|——' + parser.ruleNames[tree.getRuleIndex()])
-    except:
-        print('\t' * lev + '|——' + str(tree))
-    try:
-        tree.getChildren()
-    except:
-        return
-    for c in tree.getChildren():
-        print_tree(c, lev + 1, parser)
+	try:
+		print('\t' * lev + '|——' + parser.ruleNames[tree.getRuleIndex()])
+	except:
+		print('\t' * lev + '|——' + str(tree))
+	try:
+		tree.getChildren()
+	except:
+		return
+	for c in tree.getChildren():
+		print_tree(c, lev + 1, parser)
 
 
 def run():
@@ -61,6 +63,7 @@ def run():
 	print_tree(tree, 0, parser)
 	s = beautify_lisp_string(tree.toStringTree(recog=parser))
 	print(s)
+
 
 if __name__ == '__main__':
 	run()
