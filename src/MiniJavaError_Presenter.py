@@ -25,12 +25,9 @@ class MiniJava_ErrorListener(ErrorListener):
         string = string.split('\n')[line-1] # get the error line
         print (string)
 
-        # Using '*' to show the wrong token 
+        # Using '↑' to show the wrong token 
         # e.g. int 0number
-        #          *
-        # deal with \t, because \t takes 4 real characters
-
-        # detecting the '\t' at the start
+        #          ↑
         underline = ''
         for i in range(column):
             if string[i] == '\t':

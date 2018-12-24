@@ -19,13 +19,14 @@ pic = False
 lisp = False
 easytree = False
 outname = 'default'
+ast = False
 
 def semantic_check(parser_ret):
     visitor = My_Vistor()
     visitor.visit(parser_ret)
 
-def draw(treelist):
-    draw_pic(treelist, outname)
+def draw(treelist, name):
+    draw_pic(treelist, name)
     return treelist
 
 def process(input_stream, class_lexer, class_parser):
@@ -48,14 +49,7 @@ def process(input_stream, class_lexer, class_parser):
     except:
         print ('Error during semantic check')
     
-    visitor = AST_Builder()
-    visitor.visit(parser_ret)
-    res = visitor.tree_list
-    draw(res)
-    #string = print_tree(res, 0)
-    #print (string)
 
-    '''
     treelist = TreeList.toStringTreeList(parser_ret, recog=parser)
     #print (treelist)
     if easytree:
@@ -64,8 +58,12 @@ def process(input_stream, class_lexer, class_parser):
     if lisp:
         lisp_string = parser_ret.toStringTree(recog=parser)
     if pic:
-        draw(treelist)
-    '''
+        draw(treelist, outname + '_Parse_Tree')
+    if ast:
+        visitor = AST_Builder()
+        visitor.visit(parser_ret)
+        res = visitor.tree_list
+        draw(res, outname + '_AST')
     
     return parser_ret
 
@@ -80,8 +78,8 @@ def main():
                   metavar = "",
                   action="store_true", 
                   dest="pic",
-                  default=False,  
-                  help="make an AST picture by using Graphviz")  
+                  default=True,  
+                  help="make a parse tree picture by using Graphviz")  
     parser.add_option("-l",
                   "--lisptree",  
                   metavar = "",
@@ -103,28 +101,39 @@ def main():
                   dest="outname",
                   default="default",  
                   help="output file name (outname.png)") 
+    parser.add_option(
+                  "-a",
+                  "--ast",
+                  metavar = "",
+                  dest="ast",
+                  default=True,  
+                  help="make an AST picture by using Graphviz") 
     options, remain = parser.parse_args()
 
-    global lisp, pic, outname, easytree
+    global lisp, pic, outname, easytree, ast
     lisp = options.lisp
     pic = options.pic
     easytree = options.easytree
     outname = options.outname
+    ast = options.ast
 
     try:
         input_file = remain[0]
         if outname == 'default':
             name, _ = input_file.split('.')
-            outname = name + '_AST'
+            outname = name
     except:
         print (usage)
         exit(0)
 
+    print ('Working...')
     if os.path.exists(input_file) and os.path.isfile(input_file):
         input_stream = FileStream(input_file)
         process(input_stream, MiniJavaLexer, MiniJavaParser)
     else:
         print ("[ERROR] file: %s not exist"%os.path.normpath(input_file))
+    
+    print ('Done')
 
 if __name__ == '__main__':
     main()

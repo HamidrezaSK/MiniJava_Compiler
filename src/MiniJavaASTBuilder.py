@@ -96,7 +96,7 @@ class AST_Builder(MiniJavaVisitor):
     # Visit a parse tree produced by MiniJavaParser#state_lrparents.
     def visitState_lrparents(self, ctx:MiniJavaParser.State_lrparentsContext):
         global hash_table
-        node = [ '{}', [] ]
+        node = [ '{ }', [] ]
         hash_table[ctx] = node
         try:
             parent_list = hash_table[ctx.parentCtx]
@@ -350,7 +350,8 @@ class AST_Builder(MiniJavaVisitor):
     # Visit a parse tree produced by MiniJavaParser#expr_new_array.
     def visitExpr_new_array(self, ctx:MiniJavaParser.Expr_new_arrayContext):
         global hash_table
-        node = [ 'New Object', [] ]
+        s = ctx.getText()[3:]
+        node = [ 'New Object, name: %s'%s, [] ]
         hash_table[ctx] = node
         try:
             parent_list = hash_table[ctx.parentCtx]
