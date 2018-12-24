@@ -8,6 +8,7 @@ from MiniJavaLexer import MiniJavaLexer
 from MiniJavaParser import MiniJavaParser
 from MiniJavaError_Presenter import MiniJava_ErrorListener
 from MiniJavaSemanticAnalysis import *
+from MiniJavaASTBuilder import *
 from utilities import *
 from antlr4.error import ErrorListener
 import pydot
@@ -45,9 +46,18 @@ def process(input_stream, class_lexer, class_parser):
     try:
         semantic_check(parser_ret)
     except:
-        print ('Semantic Check Error')
+        print ('Error during semantic check')
     
+    visitor = AST_Builder()
+    visitor.visit(parser_ret)
+    res = visitor.tree_list
+    draw(res)
+    #string = print_tree(res, 0)
+    #print (string)
+
+    '''
     treelist = TreeList.toStringTreeList(parser_ret, recog=parser)
+    #print (treelist)
     if easytree:
         string = print_tree(treelist, 0)
         print (string)
@@ -55,6 +65,7 @@ def process(input_stream, class_lexer, class_parser):
         lisp_string = parser_ret.toStringTree(recog=parser)
     if pic:
         draw(treelist)
+    '''
     
     return parser_ret
 
@@ -108,7 +119,7 @@ def main():
     except:
         print (usage)
         exit(0)
-    
+
     if os.path.exists(input_file) and os.path.isfile(input_file):
         input_stream = FileStream(input_file)
         process(input_stream, MiniJavaLexer, MiniJavaParser)

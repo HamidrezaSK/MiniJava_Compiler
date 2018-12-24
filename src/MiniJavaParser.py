@@ -9,7 +9,7 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3)")
-        buf.write("\u00ee\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\u00fa\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\3\2\3\2\7\2\25\n\2\f\2\16\2\30\13\2\3")
         buf.write("\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
         buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\4\3\4\3\4\3\4\5\4\62\n\4\3")
@@ -26,9 +26,10 @@ def serializedATN():
         buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
         buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t\u00c7\n\t\3\t\3\t\3\t")
         buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3")
-        buf.write("\t\3\t\7\t\u00db\n\t\f\t\16\t\u00de\13\t\5\t\u00e0\n\t")
-        buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\t\7\t\u00e9\n\t\f\t\16\t\u00ec")
-        buf.write("\13\t\3\t\2\3\20\n\2\4\6\b\n\f\16\20\2\3\3\2\32\36\2\u0109")
+        buf.write("\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t")
+        buf.write("\7\t\u00e7\n\t\f\t\16\t\u00ea\13\t\5\t\u00ec\n\t\3\t\3")
+        buf.write("\t\3\t\3\t\3\t\3\t\3\t\7\t\u00f5\n\t\f\t\16\t\u00f8\13")
+        buf.write("\t\3\t\2\3\20\n\2\4\6\b\n\f\16\20\2\3\3\2\32\36\2\u0119")
         buf.write("\2\22\3\2\2\2\4\33\3\2\2\2\6-\3\2\2\2\bB\3\2\2\2\nF\3")
         buf.write("\2\2\2\fp\3\2\2\2\16\u009b\3\2\2\2\20\u00c6\3\2\2\2\22")
         buf.write("\26\5\4\3\2\23\25\5\6\4\2\24\23\3\2\2\2\25\30\3\2\2\2")
@@ -88,25 +89,31 @@ def serializedATN():
         buf.write("\u00a1\3\2\2\2\u00c6\u00a2\3\2\2\2\u00c6\u00a8\3\2\2\2")
         buf.write("\u00c6\u00ac\3\2\2\2\u00c6\u00ae\3\2\2\2\u00c6\u00b2\3")
         buf.write("\2\2\2\u00c6\u00b6\3\2\2\2\u00c6\u00bc\3\2\2\2\u00c6\u00c2")
-        buf.write("\3\2\2\2\u00c7\u00ea\3\2\2\2\u00c8\u00c9\f\24\2\2\u00c9")
-        buf.write("\u00ca\t\2\2\2\u00ca\u00e9\5\20\t\25\u00cb\u00cc\f\23")
-        buf.write("\2\2\u00cc\u00cd\7\13\2\2\u00cd\u00ce\5\20\t\2\u00ce\u00cf")
-        buf.write("\7\f\2\2\u00cf\u00e9\3\2\2\2\u00d0\u00d1\f\22\2\2\u00d1")
-        buf.write("\u00d2\7\37\2\2\u00d2\u00e9\7 \2\2\u00d3\u00d4\f\21\2")
-        buf.write("\2\u00d4\u00d5\7\37\2\2\u00d5\u00d6\7%\2\2\u00d6\u00df")
-        buf.write("\7\t\2\2\u00d7\u00dc\5\20\t\2\u00d8\u00d9\7\21\2\2\u00d9")
-        buf.write("\u00db\5\20\t\2\u00da\u00d8\3\2\2\2\u00db\u00de\3\2\2")
-        buf.write("\2\u00dc\u00da\3\2\2\2\u00dc\u00dd\3\2\2\2\u00dd\u00e0")
-        buf.write("\3\2\2\2\u00de\u00dc\3\2\2\2\u00df\u00d7\3\2\2\2\u00df")
-        buf.write("\u00e0\3\2\2\2\u00e0\u00e1\3\2\2\2\u00e1\u00e9\7\r\2\2")
-        buf.write("\u00e2\u00e3\f\b\2\2\u00e3\u00e4\t\2\2\2\u00e4\u00e9\b")
-        buf.write("\t\1\2\u00e5\u00e6\f\3\2\2\u00e6\u00e7\7\r\2\2\u00e7\u00e9")
-        buf.write("\b\t\1\2\u00e8\u00c8\3\2\2\2\u00e8\u00cb\3\2\2\2\u00e8")
-        buf.write("\u00d0\3\2\2\2\u00e8\u00d3\3\2\2\2\u00e8\u00e2\3\2\2\2")
-        buf.write("\u00e8\u00e5\3\2\2\2\u00e9\u00ec\3\2\2\2\u00ea\u00e8\3")
-        buf.write("\2\2\2\u00ea\u00eb\3\2\2\2\u00eb\21\3\2\2\2\u00ec\u00ea")
-        buf.write("\3\2\2\2\22\26\61\67=RU\\bpv\u009b\u00c6\u00dc\u00df\u00e8")
-        buf.write("\u00ea")
+        buf.write("\3\2\2\2\u00c7\u00f6\3\2\2\2\u00c8\u00c9\f\30\2\2\u00c9")
+        buf.write("\u00ca\7\32\2\2\u00ca\u00f5\5\20\t\31\u00cb\u00cc\f\27")
+        buf.write("\2\2\u00cc\u00cd\7\33\2\2\u00cd\u00f5\5\20\t\30\u00ce")
+        buf.write("\u00cf\f\26\2\2\u00cf\u00d0\7\34\2\2\u00d0\u00f5\5\20")
+        buf.write("\t\27\u00d1\u00d2\f\25\2\2\u00d2\u00d3\7\35\2\2\u00d3")
+        buf.write("\u00f5\5\20\t\26\u00d4\u00d5\f\24\2\2\u00d5\u00d6\7\36")
+        buf.write("\2\2\u00d6\u00f5\5\20\t\25\u00d7\u00d8\f\23\2\2\u00d8")
+        buf.write("\u00d9\7\13\2\2\u00d9\u00da\5\20\t\2\u00da\u00db\7\f\2")
+        buf.write("\2\u00db\u00f5\3\2\2\2\u00dc\u00dd\f\22\2\2\u00dd\u00de")
+        buf.write("\7\37\2\2\u00de\u00f5\7 \2\2\u00df\u00e0\f\21\2\2\u00e0")
+        buf.write("\u00e1\7\37\2\2\u00e1\u00e2\7%\2\2\u00e2\u00eb\7\t\2\2")
+        buf.write("\u00e3\u00e8\5\20\t\2\u00e4\u00e5\7\21\2\2\u00e5\u00e7")
+        buf.write("\5\20\t\2\u00e6\u00e4\3\2\2\2\u00e7\u00ea\3\2\2\2\u00e8")
+        buf.write("\u00e6\3\2\2\2\u00e8\u00e9\3\2\2\2\u00e9\u00ec\3\2\2\2")
+        buf.write("\u00ea\u00e8\3\2\2\2\u00eb\u00e3\3\2\2\2\u00eb\u00ec\3")
+        buf.write("\2\2\2\u00ec\u00ed\3\2\2\2\u00ed\u00f5\7\r\2\2\u00ee\u00ef")
+        buf.write("\f\b\2\2\u00ef\u00f0\t\2\2\2\u00f0\u00f5\b\t\1\2\u00f1")
+        buf.write("\u00f2\f\3\2\2\u00f2\u00f3\7\r\2\2\u00f3\u00f5\b\t\1\2")
+        buf.write("\u00f4\u00c8\3\2\2\2\u00f4\u00cb\3\2\2\2\u00f4\u00ce\3")
+        buf.write("\2\2\2\u00f4\u00d1\3\2\2\2\u00f4\u00d4\3\2\2\2\u00f4\u00d7")
+        buf.write("\3\2\2\2\u00f4\u00dc\3\2\2\2\u00f4\u00df\3\2\2\2\u00f4")
+        buf.write("\u00ee\3\2\2\2\u00f4\u00f1\3\2\2\2\u00f5\u00f8\3\2\2\2")
+        buf.write("\u00f6\u00f4\3\2\2\2\u00f6\u00f7\3\2\2\2\u00f7\21\3\2")
+        buf.write("\2\2\u00f8\u00f6\3\2\2\2\22\26\61\67=RU\\bpv\u009b\u00c6")
+        buf.write("\u00e8\u00eb\u00f4\u00f6")
         return buf.getvalue()
 
 
@@ -1184,6 +1191,34 @@ class MiniJavaParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
+    class Expr_op_multiContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_op_multi" ):
+                listener.enterExpr_op_multi(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_op_multi" ):
+                listener.exitExpr_op_multi(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_op_multi" ):
+                return visitor.visitExpr_op_multi(self)
+            else:
+                return visitor.visitChildren(self)
+
+
     class Expr_boolContext(ExpressionContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
@@ -1254,6 +1289,34 @@ class MiniJavaParser ( Parser ):
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitErr_rparent_closing" ):
                 return visitor.visitErr_rparent_closing(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_op_andContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_op_and" ):
+                listener.enterExpr_op_and(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_op_and" ):
+                listener.exitExpr_op_and(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_op_and" ):
+                return visitor.visitExpr_op_and(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -1360,34 +1423,6 @@ class MiniJavaParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
-    class Expr_opContext(ExpressionContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expression(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
-            else:
-                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpr_op" ):
-                listener.enterExpr_op(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpr_op" ):
-                listener.exitExpr_op(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitExpr_op" ):
-                return visitor.visitExpr_op(self)
-            else:
-                return visitor.visitChildren(self)
-
-
     class Expr_int_arrayContext(ExpressionContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
@@ -1413,6 +1448,62 @@ class MiniJavaParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
+    class Expr_op_minusContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_op_minus" ):
+                listener.enterExpr_op_minus(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_op_minus" ):
+                listener.exitExpr_op_minus(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_op_minus" ):
+                return visitor.visitExpr_op_minus(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_op_plusContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_op_plus" ):
+                listener.enterExpr_op_plus(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_op_plus" ):
+                listener.exitExpr_op_plus(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_op_plus" ):
+                return visitor.visitExpr_op_plus(self)
+            else:
+                return visitor.visitChildren(self)
+
+
     class Expr_new_arrayContext(ExpressionContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
@@ -1433,6 +1524,34 @@ class MiniJavaParser ( Parser ):
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitExpr_new_array" ):
                 return visitor.visitExpr_new_array(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class Expr_op_lessContext(ExpressionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniJavaParser.ExpressionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniJavaParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(MiniJavaParser.ExpressionContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr_op_less" ):
+                listener.enterExpr_op_less(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr_op_less" ):
+                listener.exitExpr_op_less(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_op_less" ):
+                return visitor.visitExpr_op_less(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -1699,7 +1818,7 @@ class MiniJavaParser ( Parser ):
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 232
+            self.state = 244
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1707,100 +1826,147 @@ class MiniJavaParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 230
+                    self.state = 242
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
                     if la_ == 1:
-                        localctx = MiniJavaParser.Expr_opContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        localctx = MiniJavaParser.Expr_op_andContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 198
-                        if not self.precpred(self._ctx, 18):
+                        if not self.precpred(self._ctx, 22):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 18)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 22)")
                         self.state = 199
-                        _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27))) != 0)):
-                            self._errHandler.recoverInline(self)
-                        else:
-                            self._errHandler.reportMatch(self)
-                            self.consume()
+                        self.match(MiniJavaParser.T__23)
                         self.state = 200
-                        self.expression(19)
+                        self.expression(23)
                         pass
 
                     elif la_ == 2:
-                        localctx = MiniJavaParser.Expr_arrayContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        localctx = MiniJavaParser.Expr_op_lessContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
                         self.state = 201
-                        if not self.precpred(self._ctx, 17):
+                        if not self.precpred(self._ctx, 21):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 17)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 21)")
                         self.state = 202
-                        self.match(MiniJavaParser.T__8)
+                        self.match(MiniJavaParser.T__24)
                         self.state = 203
-                        self.expression(0)
-                        self.state = 204
-                        self.match(MiniJavaParser.T__9)
+                        self.expression(22)
                         pass
 
                     elif la_ == 3:
-                        localctx = MiniJavaParser.Expr_lengthContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        localctx = MiniJavaParser.Expr_op_plusContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 206
-                        if not self.precpred(self._ctx, 16):
+                        self.state = 204
+                        if not self.precpred(self._ctx, 20):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 16)")
-                        self.state = 207
-                        self.match(MiniJavaParser.T__28)
-                        self.state = 208
-                        self.match(MiniJavaParser.T__29)
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 20)")
+                        self.state = 205
+                        self.match(MiniJavaParser.T__25)
+                        self.state = 206
+                        self.expression(21)
                         pass
 
                     elif la_ == 4:
+                        localctx = MiniJavaParser.Expr_op_minusContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 207
+                        if not self.precpred(self._ctx, 19):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 19)")
+                        self.state = 208
+                        self.match(MiniJavaParser.T__26)
+                        self.state = 209
+                        self.expression(20)
+                        pass
+
+                    elif la_ == 5:
+                        localctx = MiniJavaParser.Expr_op_multiContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 210
+                        if not self.precpred(self._ctx, 18):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 18)")
+                        self.state = 211
+                        self.match(MiniJavaParser.T__27)
+                        self.state = 212
+                        self.expression(19)
+                        pass
+
+                    elif la_ == 6:
+                        localctx = MiniJavaParser.Expr_arrayContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 213
+                        if not self.precpred(self._ctx, 17):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 17)")
+                        self.state = 214
+                        self.match(MiniJavaParser.T__8)
+                        self.state = 215
+                        self.expression(0)
+                        self.state = 216
+                        self.match(MiniJavaParser.T__9)
+                        pass
+
+                    elif la_ == 7:
+                        localctx = MiniJavaParser.Expr_lengthContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
+                        self.state = 218
+                        if not self.precpred(self._ctx, 16):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 16)")
+                        self.state = 219
+                        self.match(MiniJavaParser.T__28)
+                        self.state = 220
+                        self.match(MiniJavaParser.T__29)
+                        pass
+
+                    elif la_ == 8:
                         localctx = MiniJavaParser.Expr_method_callingContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 209
+                        self.state = 221
                         if not self.precpred(self._ctx, 15):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 15)")
-                        self.state = 210
+                        self.state = 222
                         self.match(MiniJavaParser.T__28)
-                        self.state = 211
+                        self.state = 223
                         self.match(MiniJavaParser.Identifier)
-                        self.state = 212
+                        self.state = 224
                         self.match(MiniJavaParser.T__6)
-                        self.state = 221
+                        self.state = 233
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
                         if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__6) | (1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27) | (1 << MiniJavaParser.T__30) | (1 << MiniJavaParser.T__31) | (1 << MiniJavaParser.T__32) | (1 << MiniJavaParser.Boolean) | (1 << MiniJavaParser.Identifier) | (1 << MiniJavaParser.Integer))) != 0):
-                            self.state = 213
+                            self.state = 225
                             self.expression(0)
-                            self.state = 218
+                            self.state = 230
                             self._errHandler.sync(self)
                             _la = self._input.LA(1)
                             while _la==MiniJavaParser.T__14:
-                                self.state = 214
+                                self.state = 226
                                 self.match(MiniJavaParser.T__14)
-                                self.state = 215
+                                self.state = 227
                                 self.expression(0)
-                                self.state = 220
+                                self.state = 232
                                 self._errHandler.sync(self)
                                 _la = self._input.LA(1)
 
 
 
-                        self.state = 223
+                        self.state = 235
                         self.match(MiniJavaParser.T__10)
                         pass
 
-                    elif la_ == 5:
+                    elif la_ == 9:
                         localctx = MiniJavaParser.Err_miss_RHSContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 224
+                        self.state = 236
                         if not self.precpred(self._ctx, 6):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
-                        self.state = 225
+                        self.state = 237
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MiniJavaParser.T__23) | (1 << MiniJavaParser.T__24) | (1 << MiniJavaParser.T__25) | (1 << MiniJavaParser.T__26) | (1 << MiniJavaParser.T__27))) != 0)):
                             self._errHandler.recoverInline(self)
@@ -1810,20 +1976,20 @@ class MiniJavaParser ( Parser ):
                         self.notifyErrorListeners('Error: missing the RHS of the operator')
                         pass
 
-                    elif la_ == 6:
+                    elif la_ == 10:
                         localctx = MiniJavaParser.Err_lparent_closingContext(self, MiniJavaParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 227
+                        self.state = 239
                         if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                        self.state = 228
+                        self.state = 240
                         self.match(MiniJavaParser.T__10)
                         self.notifyErrorListeners('Error: need left parent closing')
                         pass
 
              
-                self.state = 234
+                self.state = 246
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
 
@@ -1849,26 +2015,42 @@ class MiniJavaParser ( Parser ):
 
     def expression_sempred(self, localctx:ExpressionContext, predIndex:int):
             if predIndex == 0:
-                return self.precpred(self._ctx, 18)
+                return self.precpred(self._ctx, 22)
          
 
             if predIndex == 1:
-                return self.precpred(self._ctx, 17)
+                return self.precpred(self._ctx, 21)
          
 
             if predIndex == 2:
-                return self.precpred(self._ctx, 16)
+                return self.precpred(self._ctx, 20)
          
 
             if predIndex == 3:
-                return self.precpred(self._ctx, 15)
+                return self.precpred(self._ctx, 19)
          
 
             if predIndex == 4:
-                return self.precpred(self._ctx, 6)
+                return self.precpred(self._ctx, 18)
          
 
             if predIndex == 5:
+                return self.precpred(self._ctx, 17)
+         
+
+            if predIndex == 6:
+                return self.precpred(self._ctx, 16)
+         
+
+            if predIndex == 7:
+                return self.precpred(self._ctx, 15)
+         
+
+            if predIndex == 8:
+                return self.precpred(self._ctx, 6)
+         
+
+            if predIndex == 9:
                 return self.precpred(self._ctx, 1)
          
 

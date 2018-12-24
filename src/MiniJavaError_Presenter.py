@@ -15,7 +15,7 @@ class MiniJava_ErrorListener(ErrorListener):
         recognizer: What parser got the error
         offendingSymbol: The offending token in the input token stream
         '''
-        print ( 'row:'+str(line)+', column:'+str(column)+'\t'+msg, file=sys.stderr )
+        print ( 'line '+str(line)+':'+str(column)+'\t'+msg, file=sys.stderr )
         self.print_detail(recognizer, offendingSymbol, line, column, msg, e)
     
     def print_detail(self, recognizer, offendingSymbol, line, column, msg, e):

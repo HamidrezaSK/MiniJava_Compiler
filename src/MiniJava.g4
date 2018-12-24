@@ -49,8 +49,18 @@ statement   : '{' (statement)* '}'
                 #state_array_assign
             ;
 
-expression  : expression ('&&' | '<' | '+' | '-' | '*') expression
-                #expr_op
+expression  : //expression ('&&' | '<' | '+' | '-' | '*') expression
+                //#expr_op
+            expression '&&' expression
+                #expr_op_and
+            | expression '<' expression
+                #expr_op_less
+            | expression '+' expression
+                #expr_op_plus
+            | expression '-' expression
+                #expr_op_minus
+            | expression '*' expression
+                #expr_op_multi
             | expression '[' expression ']'
                 #expr_array
             | expression '.' 'length'

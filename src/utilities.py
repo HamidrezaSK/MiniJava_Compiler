@@ -26,7 +26,7 @@ def print_tree_parent(treelist, buf, parent_name=''):
     # set the label name
     index += 1
     buf.write(node_name +'  [label="%s"] ;\n'%treelist[0])
-    if treelist[1] != None:
+    if treelist[1] != None and treelist[1] != []:
         for subtree in treelist[1]:
             print_tree_parent(subtree, buf, node_name)  # recursive
     else:
@@ -53,7 +53,7 @@ def print_tree(treelist, height):
     for i in range(height):
         string += '\t|'
     string += '-- ' + treelist[0] + '\n'
-    if treelist[1] != None:
+    if treelist[1] != None and treelist[1] != []:
         for subtree in treelist[1]:
             string += print_tree(subtree, height+1)
         return string

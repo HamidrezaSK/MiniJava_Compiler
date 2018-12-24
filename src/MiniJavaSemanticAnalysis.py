@@ -173,6 +173,9 @@ class My_Vistor(MiniJavaVisitor):
         Check whether the method name has been defined
         Start a new region
         '''
+        #print (dir(ctx))
+        #print (ctx.children)
+        #print (type(ctx.parentCtx))
         current_region = self.regions.get_top()
         method_name = ctx.Identifier(0).getText()
         method_type = ctx.mtype(0).getText()

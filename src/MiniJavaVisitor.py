@@ -89,6 +89,11 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by MiniJavaParser#expr_op_multi.
+    def visitExpr_op_multi(self, ctx:MiniJavaParser.Expr_op_multiContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by MiniJavaParser#expr_bool.
     def visitExpr_bool(self, ctx:MiniJavaParser.Expr_boolContext):
         return self.visitChildren(ctx)
@@ -101,6 +106,11 @@ class MiniJavaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by MiniJavaParser#err_rparent_closing.
     def visitErr_rparent_closing(self, ctx:MiniJavaParser.Err_rparent_closingContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#expr_op_and.
+    def visitExpr_op_and(self, ctx:MiniJavaParser.Expr_op_andContext):
         return self.visitChildren(ctx)
 
 
@@ -124,18 +134,28 @@ class MiniJavaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by MiniJavaParser#expr_op.
-    def visitExpr_op(self, ctx:MiniJavaParser.Expr_opContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by MiniJavaParser#expr_int_array.
     def visitExpr_int_array(self, ctx:MiniJavaParser.Expr_int_arrayContext):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by MiniJavaParser#expr_op_minus.
+    def visitExpr_op_minus(self, ctx:MiniJavaParser.Expr_op_minusContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#expr_op_plus.
+    def visitExpr_op_plus(self, ctx:MiniJavaParser.Expr_op_plusContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by MiniJavaParser#expr_new_array.
     def visitExpr_new_array(self, ctx:MiniJavaParser.Expr_new_arrayContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by MiniJavaParser#expr_op_less.
+    def visitExpr_op_less(self, ctx:MiniJavaParser.Expr_op_lessContext):
         return self.visitChildren(ctx)
 
 
