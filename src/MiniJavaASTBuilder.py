@@ -264,7 +264,7 @@ class AST_Builder(MiniJavaVisitor):
     # Visit a parse tree produced by MiniJavaParser#expr_int.
     def visitExpr_int(self, ctx:MiniJavaParser.Expr_intContext):
         global hash_table
-        node = [ 'Integer', [] ]
+        node = [ 'Integer, value: %s'%ctx.getText(), [] ]   # change
         hash_table[ctx] = node
         try:
             parent_list = hash_table[ctx.parentCtx]
