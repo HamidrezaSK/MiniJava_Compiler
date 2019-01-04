@@ -30,7 +30,7 @@ pip install -r requirements.txt
 python MiniJava.py --cst --ast -i testfiles/xxx.java -o testfiles/output/
 ```
 
-![usage](doc/usage.jpg)
+![usage](src/img/usage.jpg)
 
 ## Contribution
 
