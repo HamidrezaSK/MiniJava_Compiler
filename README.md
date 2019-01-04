@@ -34,7 +34,8 @@ python MiniJava.py --cst --ast -i testfiles/xxx.java -o testfiles/output/
 
 ## Contribution
 
-| Name           | Contribution                                                | Percentage |
-| -------------- | ----------------------------------------------------------- | ---------- |
-| Chen, Jiangjie | API学习、词法/语法分析、文法文件、具体语法树、报告/文档撰写 | 50%        |
-| Wang, Ao       | 语义分析、错误处理与修复、抽象语法树                        | 50%        |
+| Name           | Contribution                                  | Percentage |
+| -------------- | --------------------------------------------- | ---------- |
+| Chen, Jiangjie | 架构设计、词法/语法分析、文法文件、具体语法树       | 45%        |
+| Wang, Ao       | 语义分析、错误处理与修复、抽象语法树               | 55%        |
+
