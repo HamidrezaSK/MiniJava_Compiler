@@ -61,14 +61,14 @@ def process(args):
 	if args.cst:
 		cst_image = os.path.join(args.output_dir, file_name + '_cst')
 		draw(treelist, cst_image)
-		print('* CST image saved at %s.' % cst_image)
+		# print('* CST image saved at %s.' % cst_image)
 	if args.ast:
 		ast_image = os.path.join(args.output_dir, file_name + '_ast')
 		visitor = AST_Builder()
 		visitor.visit(tree)
 		res = visitor.tree_list
 		draw(res, ast_image)
-		print('* AST image saved at %s.' % ast_image)
+		# print('* AST image saved at %s.' % ast_image)
 
 	return tree
 
@@ -101,7 +101,7 @@ def main():
 if __name__ == '__main__':
 	''' 
 	```bash
-	python3 MiniJava.py -i testfiles/Factorial.java --ast --cst -o testfiles/test
+	python3 MiniJava.py -i testfiles/Factorial.java --ast --cst
 	```
 	'''
 	main()

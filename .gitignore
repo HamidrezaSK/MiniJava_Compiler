@@ -313,3 +313,5 @@ test.*
 /test/
 *.png
 *.jpg
+doc/
+*.java

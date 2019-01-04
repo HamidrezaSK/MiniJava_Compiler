@@ -3,13 +3,20 @@ The project for COMP130014 @ Fudan University
 
 ## Requirements
 
-> Python=3.6
+> Developing OS: MacOS 10.14
+>
+> - But it should support Linux and Windows, untested though.
+>
+> Python==3.6
 >
 > antlr4-python3-runtime==4.7.2
 > 
 > graphviz==0.10.1
+> 
+> pydot==1.4.1
 
 ```bash
+brew install graphviz || sudo apt-get install graphviz
 pip install -r requirements.txt
 ```
 
@@ -17,3 +24,17 @@ pip install -r requirements.txt
 
 > PyCharm: ANTLR-V4 grammar plugin
 
+## Usage
+
+```bash
+python MiniJava.py --cst --ast -i testfiles/xxx.java -o testfiles/output/
+```
+
+![usage](doc/usage.jpg)
+
+## Contribution
+
+| Name           | Contribution                                                | Percentage |
+| -------------- | ----------------------------------------------------------- | ---------- |
+| Chen, Jiangjie | API学习、词法/语法分析、文法文件、具体语法树、报告/文档撰写 | 50%        |
+| Wang, Ao       | 语义分析、错误处理与修复、抽象语法树                        | 50%        |
