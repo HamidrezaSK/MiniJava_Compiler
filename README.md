@@ -38,4 +38,3 @@ python MiniJava.py --cst --ast -i testfiles/xxx.java -o testfiles/output/
 | -------------- | --------------------------------------------- | ---------- |
 | Chen, Jiangjie | 架构设计、词法/语法分析、文法文件、具体语法树       | 45%        |
 | Wang, Ao       | 文件文法补充、语义分析、错误处理与修复、抽象语法树   | 55%        |
-test
